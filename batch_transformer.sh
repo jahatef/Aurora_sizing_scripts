@@ -46,8 +46,8 @@ for idx in "${!HEADS[@]}"; do
                      mlp_h_to_4h \
                      mlp_4h_to_h \
                      logit_block \
-                     sdpa \
-            --output_file "results_h_sweep_blocks_median/heads_${H}.csv" 2>&1
+                     sdpa_attn \
+            --output_file "median/results_h_sweep_blocks_median/heads_${H}.csv" 2>&1
 
 
         echo "Finished H=$H"

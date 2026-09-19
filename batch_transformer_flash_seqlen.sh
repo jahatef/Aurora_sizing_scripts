@@ -37,7 +37,7 @@ for idx in "${!SEQLENS[@]}"; do
             --tensor_mp_size 1 \
             --num_iterations 100 \
             --num_warmup_iterations 50 \
-            --blocks flash \
+            --blocks flash_attn \
             --output_file "results_s_sweep_flash_median/seqlen_${S}.csv"
 
         'ZE_AFFINITY_MASK=$GPU MASTER_ADDR=127.0.0.1 MASTER_PORT=$((6000 + idx)) WORLD_SIZE=1 RANK=0 LOCAL_RANK=0 python transformer_flops.py \

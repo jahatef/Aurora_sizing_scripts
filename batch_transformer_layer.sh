@@ -38,7 +38,7 @@ for idx in "${!HEADS[@]}"; do
             --num_iterations 100 \
             --num_warmup_iterations 50 \
 			--use_flash \
-            --output_file "results_h_sweep_layer_median/heads_${H}.csv"
+            --output_file "median/results_h_sweep_layer_median/heads_${H}.csv"
 
 
         echo "Finished H=$H"

@@ -46,8 +46,8 @@ for idx in "${!SEQLENS[@]}"; do
                      mlp_h_to_4h \
                      mlp_4h_to_h \
                      logit_block \
-                     sdpa \
-            --output_file "results_s_sweep_blocks_median/seqlen_${S}.csv"
+                     sdpa_attn \
+            --output_file "median/results_s_sweep_blocks_median/seqlen_${S}.csv"
 
         'ZE_AFFINITY_MASK=$GPU MASTER_ADDR=127.0.0.1 MASTER_PORT=$((6000 + idx)) WORLD_SIZE=1 RANK=0 LOCAL_RANK=0 python transformer_flops.py \
             --hidden_size_range 32 16384 32 \

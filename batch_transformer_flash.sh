@@ -37,8 +37,8 @@ for idx in "${!HEADS[@]}"; do
             --tensor_mp_size 1 \
             --num_iterations 100 \
             --num_warmup_iterations 50 \
-			--blocks flash \
-            --output_file "results_h_sweep_flash_median/heads_${H}.csv"
+			--blocks flash_attn \
+            --output_file "median/results_h_sweep_flash_median/heads_${H}.csv"
 
 
         echo "Finished H=$H"
