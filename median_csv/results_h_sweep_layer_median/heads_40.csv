@@ -1,0 +1,5 @@
+num_attention_heads,hidden_size,train_micro_batch_size_per_gpu,seq_length,vocab_size,train_batch_size,tensor_mp_size,pipeline_mp_size,dp_size,actual_attention_duration,actual_attention_throughput,actual_mlp_duration,actual_mlp_throughput,actual_duration,actual_throughput
+40,40,4,2048,51200,256,1,1,1,,,,,,
+40,40,4,2048,51200,256,1,1,1,0.0071,0.39,0.0001,1.448,0.0073,0.41
+40,80,4,2048,51200,256,1,1,1,0.0075,0.769,0.0001,5.816,0.0077,0.855
+40,120,4,2048,51200,256,1,1,1,,,,,,

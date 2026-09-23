@@ -1,0 +1,2 @@
+num_attention_heads,hidden_size,train_micro_batch_size_per_gpu,seq_length,vocab_size,train_batch_size,tensor_mp_size,pipeline_mp_size,dp_size
+32,32,1,32768,51200,256,1,1,1

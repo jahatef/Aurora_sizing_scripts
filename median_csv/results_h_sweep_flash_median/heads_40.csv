@@ -1,0 +1,8 @@
+num_attention_heads,hidden_size,train_micro_batch_size_per_gpu,seq_length,vocab_size,train_batch_size,tensor_mp_size,pipeline_mp_size,dp_size,flash_attn,estimated_attention_duration,estimated_attention_throughput,estimated_mlp_duration,estimated_mlp_throughput,estimated_duration,estimated_throughput
+40,640,4,2048,51200,256,1,1,1,19.417,0.0022,31.553,0.0,0.0,0.0022,55.825
+40,1280,4,2048,51200,256,1,1,1,,,,,,,
+40,640,4,2048,51200,256,1,1,1,19.381,0.0022,31.494,0.0,0.0,0.0022,55.72
+40,1280,4,2048,51200,256,1,1,1,53.592,0.0016,120.582,0.0,0.0,0.0016,254.562
+40,2560,4,2048,51200,256,1,1,1,64.832,0.0026,226.911,0.0,0.0,0.0026,551.069
+40,5120,4,2048,51200,256,1,1,1,47.313,0.0073,283.876,0.0,0.0,0.0073,757.002
+40,10240,4,2048,51200,256,1,1,1,25.923,0.0265,285.15,0.0,0.0,0.0265,803.603
