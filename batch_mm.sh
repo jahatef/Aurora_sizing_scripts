@@ -1,7 +1,7 @@
 #! /bin/bash 
 #PBS -l select=1
 #PBS -l place=scatter
-#PBS -l walltime=04:0:00
+#PBS -l walltime=24:0:00
 #PBS -q capacity
 #PBS -A foundmedicine
 #PBS -l filesystems=flare
@@ -13,14 +13,12 @@ source /lus/flare/projects/FoundMedicine/jahatef/setup.sh
 cd /lus/flare/projects/FoundMedicine/jahatef/sizing/cookbook/benchmarks/sizing
 
 
-set +e
-mkdir -p results-cache
 
 module load xpu-smi
 
 ZE_AFFINITY_MASK=0 MASTER_ADDR=127.0.0.1 MASTER_PORT=6000 \
 WORLD_SIZE=1 RANK=0 LOCAL_RANK=0 \
-python mm_flops.py -m 2048 -n 2048 --k_range 32704 524288 1 \
+python mm_flops.py -m 2048 -n 2048 --k_range 24298 131072 1 \
     --output_file median/basicGemmKSweep.csv \
     --notes "Figure7 basicGemmKSweep: m=2048, n=2048, k swept"
 
