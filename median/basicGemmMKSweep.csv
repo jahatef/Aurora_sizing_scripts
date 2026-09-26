@@ -1,0 +1,286 @@
+
+Benchmark started on 2026-09-25 20:57:40
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 32 -n 4096 -k 32 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 32x4096x32: 0.000
+Throughput (in TFLOP/s) for 32x4096x32: 0.170
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:57:49
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 64 -n 4096 -k 64 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 64x4096x64: 0.000
+Throughput (in TFLOP/s) for 64x4096x64: 0.688
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:57:59
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 128 -n 4096 -k 128 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 128x4096x128: 0.000
+Throughput (in TFLOP/s) for 128x4096x128: 2.724
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:08
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 256 -n 4096 -k 256 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 256x4096x256: 0.000
+Throughput (in TFLOP/s) for 256x4096x256: 10.277
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:17
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 512 -n 4096 -k 512 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 512x4096x512: 0.000
+Throughput (in TFLOP/s) for 512x4096x512: 36.949
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:27
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 1024 -n 4096 -k 1024 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 1024x4096x1024: 0.000
+Throughput (in TFLOP/s) for 1024x4096x1024: 86.210
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:37
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 2048 -n 4096 -k 2048 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 2048x4096x2048: 0.000
+Throughput (in TFLOP/s) for 2048x4096x2048: 218.573
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:47
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 4096 -n 4096 -k 4096 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 4096x4096x4096: 0.001
+Throughput (in TFLOP/s) for 4096x4096x4096: 205.243
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:58:56
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 8192 -n 4096 -k 8192 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 8192x4096x8192: 0.003
+Throughput (in TFLOP/s) for 8192x4096x8192: 172.184
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:59:07
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 16384 -n 4096 -k 16384 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 16384x4096x16384: 0.013
+Throughput (in TFLOP/s) for 16384x4096x16384: 172.140
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:59:20
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 32768 -n 4096 -k 32768 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 32768x4096x32768: 0.051
+Throughput (in TFLOP/s) for 32768x4096x32768: 170.934
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 20:59:43
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 65536 -n 4096 -k 65536 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 65536x4096x65536: 0.206
+Throughput (in TFLOP/s) for 65536x4096x65536: 170.619
+--------------------------------------------------------------------------------
+
+Benchmark started on 2026-09-25 21:00:47
+
+** Command line:
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python mm_flops.py -m 131072 -n 4096 -k 131072 --output_file median/basicGemmMKSweep.csv --notes 'Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096'
+
+** Platform:
+Linux x4607c4s7b0n0 5.14.21-150400.24.235-default #1 SMP PREEMPT_DYNAMIC Thu Aug 6 18:51:07 UTC 2026 (be4fdd2) x86_64 x86_64
+_XpuDeviceProperties(name='Intel(R) Data Center GPU Max 1550', platform_name='Intel(R) oneAPI Unified Runtime over Level-Zero', type='gpu', device_id=0xBD6, uuid=c1183548-c52d-bc74-0000-000000000001, driver_version='1.6.33578+42', total_memory=65520MB, max_compute_units=448, gpu_eu_count=448, gpu_subslice_count=56, max_work_group_size=1024, max_num_sub_groups=64, sub_group_sizes=[16 32], has_fp16=1, has_fp64=1, has_atomic64=1)
+
+** Critical component versions:
+torch=2.10.0a0+git449b176, cuda=20250302, nccl=ccl version unavailable through API
+
+** Additional notes: 
+Figure3 basicGemmMKSweep: m=k=2^log_size, n=4096
+
+--------------------------------------------------------------------------------
+
+
+Elapsed time for 131072x4096x131072: 0.830
+Throughput (in TFLOP/s) for 131072x4096x131072: 169.525
+--------------------------------------------------------------------------------
