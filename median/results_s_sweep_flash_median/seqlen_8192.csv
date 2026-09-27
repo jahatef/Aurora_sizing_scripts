@@ -1,0 +1,222 @@
+entering megatron init
+Arguments(precision='bf16', apply_query_key_layer_scaling=True, attention_softmax_in_fp32=False, scaled_masked_softmax_fusion=True, attention_dropout=0.0, num_attention_heads=32, hidden_size=512, rank=0, local_rank=0, distributed_backend='xccl', world_size=1, model_parallel_size=1, pipe_parallel_size=1, global_num_gpus=1, train_micro_batch_size_per_gpu=1, use_cpu_initialization=False, num_layers=1, bias_gelu_fusion=False, bias_dropout_fusion=False, layernorm_epsilon=1e-05, hidden_dropout=0.0, fp16_lm_cross_entropy=False, init_method_std=0.02, padded_vocab_size=51200, max_position_embeddings=2048, checkpoint_num_layers=1, optimizer_type='adam', lr=0.00015, weight_decay=0.01, loss_scale_window=1000, hysteresis=2, clip_grad=1.0, train_iters=20000, lr_decay_iters=20000, lr_decay_style='cosine', use_checkpoint_lr_scheduler=False, override_lr_scheduler=False, save=None, seed=1234)
+> initializing torch distributed ...
+
+
+model_par: False
+
+
+
+
+device count: 1
+
+
+
+calling init mp
+
+> initializing model parallel with size 1
+MPU DP: [0]
+MPU PP: [0]
+
+
+group: <torch.distributed.distributed_c10d.ProcessGroup object at 0x15400f3c4630>
+
+
+MPU MP: [0]
+exiting megatron init
+num_attention_heads: 32, hidden_size: 512, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x16): 19.478
+Elapsed time for flash_attn (1x8192x32x16): 0.0071
+
+Attention duration (in seconds): 0.0071
+Attention throughput (in TFLOP/s): 21.913
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0071
+Transformer throughput (in TFLOP/s): 26.782
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 1024, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x32): 50.611
+Elapsed time for flash_attn (1x8192x32x32): 0.0054
+
+Attention duration (in seconds): 0.0054
+Attention throughput (in TFLOP/s): 63.263
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0054
+Transformer throughput (in TFLOP/s): 88.568
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 2048, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x64): 71.496
+Elapsed time for flash_attn (1x8192x32x64): 0.0077
+
+Attention duration (in seconds): 0.0077
+Attention throughput (in TFLOP/s): 107.243
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0077
+Transformer throughput (in TFLOP/s): 178.739
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 4096, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x128): 53.623
+Elapsed time for flash_attn (1x8192x32x128): 0.0205
+
+Attention duration (in seconds): 0.0205
+Attention throughput (in TFLOP/s): 107.245
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0205
+Transformer throughput (in TFLOP/s): 214.490
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 8192, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x256): 28.085
+Elapsed time for flash_attn (1x8192x32x256): 0.0783
+
+Attention duration (in seconds): 0.0783
+Attention throughput (in TFLOP/s): 84.256
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0783
+Transformer throughput (in TFLOP/s): 196.598
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+entering megatron init
+Arguments(precision='bf16', apply_query_key_layer_scaling=True, attention_softmax_in_fp32=False, scaled_masked_softmax_fusion=True, attention_dropout=0.0, num_attention_heads=32, hidden_size=512, rank=0, local_rank=0, distributed_backend='xccl', world_size=1, model_parallel_size=1, pipe_parallel_size=1, global_num_gpus=1, train_micro_batch_size_per_gpu=1, use_cpu_initialization=False, num_layers=1, bias_gelu_fusion=False, bias_dropout_fusion=False, layernorm_epsilon=1e-05, hidden_dropout=0.0, fp16_lm_cross_entropy=False, init_method_std=0.02, padded_vocab_size=51200, max_position_embeddings=2048, checkpoint_num_layers=1, optimizer_type='adam', lr=0.00015, weight_decay=0.01, loss_scale_window=1000, hysteresis=2, clip_grad=1.0, train_iters=20000, lr_decay_iters=20000, lr_decay_style='cosine', use_checkpoint_lr_scheduler=False, override_lr_scheduler=False, save=None, seed=1234)
+> initializing torch distributed ...
+
+
+model_par: False
+
+
+
+
+device count: 1
+
+
+
+calling init mp
+
+> initializing model parallel with size 1
+MPU DP: [0]
+MPU PP: [0]
+
+
+group: <torch.distributed.distributed_c10d.ProcessGroup object at 0x14784a9c8230>
+
+
+MPU MP: [0]
+exiting megatron init
+num_attention_heads: 32, hidden_size: 512, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x16): 20.074
+Elapsed time for flash_attn (1x8192x32x16): 0.0068
+
+Attention duration (in seconds): 0.0068
+Attention throughput (in TFLOP/s): 22.583
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0068
+Transformer throughput (in TFLOP/s): 27.602
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 1024, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x32): 51.236
+Elapsed time for flash_attn (1x8192x32x32): 0.0054
+
+Attention duration (in seconds): 0.0054
+Attention throughput (in TFLOP/s): 64.045
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0054
+Transformer throughput (in TFLOP/s): 89.663
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 2048, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x64): 71.818
+Elapsed time for flash_attn (1x8192x32x64): 0.0077
+
+Attention duration (in seconds): 0.0077
+Attention throughput (in TFLOP/s): 107.727
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0077
+Transformer throughput (in TFLOP/s): 179.545
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 4096, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x128): 54.336
+Elapsed time for flash_attn (1x8192x32x128): 0.0202
+
+Attention duration (in seconds): 0.0202
+Attention throughput (in TFLOP/s): 108.671
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0202
+Transformer throughput (in TFLOP/s): 217.342
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
+num_attention_heads: 32, hidden_size: 8192, train_micro_batch_size_per_gpu: 1, seq_length: 8192, vocab_size: 51200, train_batch_size: 256, tensor_mp_size: 1, pipeline_mp_size: 1, dp_size: 1
+
+
+Estimate
+--------
+Throughput (in TFLOP/s) for flash_attn (1x8192x32x256): 28.110
+Elapsed time for flash_attn (1x8192x32x256): 0.0782
+
+Attention duration (in seconds): 0.0782
+Attention throughput (in TFLOP/s): 84.330
+MLP duration (in seconds): 0.0000
+MLP throughput (in TFLOP/s): 0.000
+Transformer duration (in seconds): 0.0782
+Transformer throughput (in TFLOP/s): 196.769
+Transformer - MLP - Attention (in seconds): 0.0000
+
+========================================================================================================================
