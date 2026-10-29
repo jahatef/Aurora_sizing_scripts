@@ -1,0 +1,50 @@
+local_rank: 0
+rank is 0
+2026:10:27-15:44:53:1524597 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-15:44:53:1524597 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 1024
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+ngpus: 1, causal: True, batch: 4, seqlen: 1024, num_heads: 32, head_dim: 64
+140.407434 iter/s, 0.712 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX1_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX1_attn_func", "iter_per_s": 140.40743432891117, "mode": "fwd_bwd", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 1024, "status": "ok", "total_sec": 0.7122129998169839}
+2026:10:27-15:45:06:1524641 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-15:45:06:1524641 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX2_attn
+Batch size: 4
+Sequence length: 1024
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX2_attn_func [fwd_bwd]
+ngpus: 1, causal: True, batch: 4, seqlen: 1024, num_heads: 32, head_dim: 64
+139.237351 iter/s, 0.718 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX2_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX2_attn_func", "iter_per_s": 139.23735143509884, "mode": "fwd_bwd", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 1024, "status": "ok", "total_sec": 0.7181980910245329}
+2026:10:27-15:45:15:1524680 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-15:45:15:1524680 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX3_attn
+Batch size: 4
+Sequence length: 1024
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX3_attn_func [fwd_bwd]
+ngpus: 1, causal: True, batch: 4, seqlen: 1024, num_heads: 32, head_dim: 64
+138.791868 iter/s, 0.721 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX3_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX3_attn_func", "iter_per_s": 138.79186835783108, "mode": "fwd_bwd", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 1024, "status": "ok", "total_sec": 0.720503306016326}
+2026:10:27-15:45:24:1524719 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-15:45:24:1524719 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX4_attn
+Batch size: 4
+Sequence length: 1024
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX4_attn_func [fwd_bwd]
+ngpus: 1, causal: True, batch: 4, seqlen: 1024, num_heads: 32, head_dim: 64
+30.839049 iter/s, 3.243 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX4_attn", "backward_backend": "portable", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "portable", "head_dim": 64, "impl": "ringX4_attn_func", "iter_per_s": 30.83904933332032, "mode": "fwd_bwd", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "portable", "seqlen": 1024, "status": "ok", "total_sec": 3.2426421099808067}

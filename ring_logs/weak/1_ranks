@@ -1,0 +1,32 @@
+local_rank: 0
+rank is 0
+2026:10:22-22:12:50:1945418 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+2026:10:22-22:12:50:1945418 |CCL_WARN| Could not initialize Sysman API using `zesInit`. Sysman API was probably initialized externally using legacy ZES_ENABLE_SYSMAN flag. oneCCL will falback to legacy behavior
+local_rank: 0
+rank is 0
+2026:10:23-14:43:51:2258653 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:23-14:43:51:2258653 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX4_attn
+Batch size: 4
+Sequence length: 3072
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX4_attn_func [backward]
+ngpus: 1, causal: True, batch: 4, seqlen: 3072, num_heads: 32, head_dim: 64
+0.278217 iter/s, 3.594 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX4_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX4_attn_func", "iter_per_s": 0.2782169066095901, "mode": "backward", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "auto", "seqlen": 3072, "status": "ok", "total_sec": 3.594317873008549}
+local_rank: 0
+rank is 0
+2026:10:24-02:07:19:1297563 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:24-02:07:19:1297563 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX4_attn
+Batch size: 4
+Sequence length: 3072
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX4_attn_func [backward]
+ngpus: 1, causal: True, batch: 4, seqlen: 3072, num_heads: 32, head_dim: 64
+0.253089 iter/s, 3.951 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX4_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX4_attn_func", "iter_per_s": 0.2530885153949847, "mode": "backward", "ngpus": 1, "num_heads": 32, "reason": "", "requested_backend": "auto", "seqlen": 3072, "status": "ok", "total_sec": 3.951186795020476}

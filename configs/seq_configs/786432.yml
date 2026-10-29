@@ -1,0 +1,2 @@
+seq_length: 786432
+max_position_embeddings: 786432

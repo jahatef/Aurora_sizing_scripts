@@ -1,0 +1,1516 @@
+local_rank: 4
+rank is 4
+local_rank: 8
+rank is 8
+local_rank: 3
+rank is 3
+local_rank: 5
+rank is 5
+local_rank: 2
+rank is 2
+local_rank: 6
+rank is 6
+local_rank: 9
+rank is 9
+local_rank: 0
+rank is 0
+local_rank: 1
+rank is 1
+local_rank: 10
+rank is 10
+local_rank: 7
+rank is 7
+local_rank: 11
+rank is 11
+local_rank: 0
+rank is 108
+local_rank: 10
+rank is 118
+local_rank: 7
+rank is 115
+local_rank: 9
+rank is 117
+local_rank: 5
+rank is 173
+local_rank: 3
+rank is 171
+local_rank: 8
+rank is 116
+local_rank: 7
+rank is 175
+local_rank: 1
+rank is 109
+local_rank: 10
+rank is 178
+local_rank: 0
+rank is 156
+local_rank: 4
+rank is 40
+local_rank: 2
+rank is 170
+local_rank: 5
+rank is 41
+local_rank: 7
+rank is 163
+local_rank: 3
+rank is 135
+local_rank: 7
+rank is 187
+local_rank: 6
+rank is 42
+local_rank: 1
+rank is 85
+local_rank: 10
+rank is 166
+local_rank: 7
+rank is 43
+local_rank: 3
+rank is 87
+local_rank: 4
+rank is 88
+local_rank: 1
+rank is 169
+local_rank: 0
+rank is 36
+local_rank: 2
+rank is 158
+local_rank: 10
+rank is 46
+local_rank: 8
+rank is 92
+local_rank: 9
+rank is 93
+local_rank: 3
+rank is 159
+local_rank: 3
+rank is 39
+local_rank: 3
+rank is 111
+local_rank: 10
+rank is 190
+local_rank: 6
+rank is 174
+local_rank: 7
+rank is 91
+local_rank: 2
+rank is 38
+local_rank: 11
+rank is 167
+local_rank: 11
+rank is 179
+local_rank: 6
+rank is 114
+local_rank: 0
+rank is 84
+local_rank: 8
+rank is 188
+local_rank: 8
+rank is 44
+local_rank: 4
+rank is 172
+local_rank: 4
+rank is 184
+local_rank: 5
+rank is 113
+local_rank: 1
+rank is 157
+local_rank: 5
+rank is 89
+local_rank: 9
+rank is 45
+local_rank: 8
+rank is 164
+local_rank: 9
+rank is 177
+local_rank: 2
+rank is 86
+local_rank: 6
+rank is 186
+local_rank: 1
+rank is 37
+local_rank: 4
+rank is 112
+local_rank: 7
+rank is 139
+local_rank: 9
+rank is 165
+local_rank: 6
+rank is 90
+local_rank: 0
+rank is 180
+local_rank: 2
+local_rank: 2
+rank is 134
+local_rank: 8
+rank is 176
+rank is 110
+local_rank: 4
+rank is 136
+local_rank: 6
+rank is 162
+local_rank: 11
+rank is 119
+local_rank: 1
+rank is 133
+local_rank: 10
+rank is 142
+local_rank: 10
+rank is 94
+local_rank: 5
+rank is 185
+local_rank: 0
+rank is 168
+local_rank: 4
+rank is 160
+local_rank: 5
+rank is 137
+local_rank: 9
+rank is 141
+local_rank: 5
+rank is 161
+local_rank: 3
+rank is 183
+local_rank: 8
+rank is 140
+local_rank: 2
+rank is 182
+local_rank: 6
+rank is 138
+local_rank: 0
+rank is 132
+local_rank: 1
+rank is 181
+local_rank: 9
+rank is 189
+local_rank: 5
+rank is 29
+local_rank: 11
+rank is 35
+local_rank: 6
+rank is 30
+local_rank: 8
+rank is 32
+local_rank: 11
+rank is 191
+local_rank: 9
+rank is 33
+local_rank: 3
+rank is 27
+local_rank: 4
+rank is 28
+local_rank: 7
+rank is 31
+local_rank: 0
+rank is 24
+local_rank: 10
+rank is 34
+local_rank: 1
+rank is 25
+local_rank: 2
+rank is 26
+local_rank: 8
+rank is 80
+local_rank: 10
+rank is 82
+local_rank: 11
+rank is 83
+local_rank: 3
+rank is 75
+local_rank: 0
+rank is 72
+local_rank: 1
+rank is 73
+local_rank: 2
+rank is 74
+local_rank: 4
+rank is 76
+local_rank: 5
+rank is 77
+local_rank: 6
+rank is 78
+local_rank: 7
+rank is 79
+local_rank: 9
+rank is 81
+local_rank: 0
+rank is 60
+local_rank: 11
+rank is 71
+local_rank: 11
+rank is 143
+local_rank: 1
+rank is 61
+local_rank: 6
+rank is 66
+local_rank: 3
+rank is 63
+local_rank: 11
+rank is 47
+local_rank: 9
+rank is 69
+local_rank: 2
+rank is 62
+local_rank: 11
+rank is 95
+local_rank: 4
+rank is 64
+local_rank: 5
+rank is 65
+local_rank: 10
+rank is 70
+local_rank: 7
+rank is 67
+local_rank: 8
+rank is 68
+local_rank: 0
+rank is 96
+local_rank: 1
+rank is 97
+local_rank: 2
+rank is 98
+local_rank: 3
+rank is 99
+local_rank: 4
+rank is 100
+local_rank: 5
+rank is 101
+local_rank: 6
+rank is 102
+local_rank: 7
+rank is 103
+local_rank: 5
+rank is 17
+local_rank: 1
+rank is 121
+local_rank: 8
+rank is 104
+local_rank: 9
+rank is 105
+local_rank: 10
+rank is 106
+local_rank: 6
+rank is 126
+local_rank: 6
+rank is 18
+local_rank: 3
+rank is 123
+local_rank: 7
+rank is 19
+local_rank: 9
+rank is 129
+local_rank: 1
+rank is 13
+local_rank: 4
+rank is 16
+local_rank: 2
+rank is 122
+local_rank: 8
+rank is 20
+local_rank: 11
+rank is 131
+local_rank: 2
+rank is 14
+local_rank: 10
+rank is 22
+local_rank: 10
+rank is 130
+local_rank: 3
+rank is 15
+local_rank: 9
+rank is 21
+local_rank: 7
+rank is 127
+local_rank: 5
+rank is 125
+local_rank: 11
+rank is 23
+local_rank: 3
+rank is 51
+local_rank: 10
+rank is 58
+local_rank: 1
+rank is 49
+local_rank: 8
+rank is 128
+local_rank: 0
+rank is 12
+local_rank: 4
+rank is 52
+local_rank: 0
+rank is 120
+local_rank: 8
+rank is 56
+local_rank: 4
+rank is 124
+local_rank: 7
+rank is 55
+local_rank: 11
+rank is 59
+local_rank: 2
+rank is 50
+local_rank: 0
+rank is 48
+local_rank: 5
+rank is 53
+local_rank: 9
+rank is 57
+local_rank: 6
+rank is 54
+local_rank: 11
+rank is 107
+local_rank: 0
+rank is 144
+local_rank: 1
+rank is 145
+local_rank: 2
+rank is 146
+local_rank: 3
+rank is 147
+local_rank: 4
+rank is 148
+local_rank: 5
+rank is 149
+local_rank: 6
+rank is 150
+local_rank: 7
+rank is 151
+local_rank: 8
+rank is 152
+local_rank: 9
+rank is 153
+local_rank: 10
+rank is 154
+local_rank: 11
+rank is 155
+My guessed rank = 0
+2026:10:09-11:34:17:781220 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:09-11:34:17:781220 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+My guessed rank = 168
+My guessed rank = 115
+My guessed rank = 62
+My guessed rank = 124
+My guessed rank = 155
+My guessed rank = 127
+My guessed rank = 113
+My guessed rank = 174
+My guessed rank = 64
+My guessed rank = 152
+My guessed rank = 65
+My guessed rank = 120
+My guessed rank = 114
+My guessed rank = 144
+My guessed rank = 151
+My guessed rank = 130
+My guessed rank = 69
+My guessed rank = 150
+My guessed rank = 175
+My guessed rank = 66
+My guessed rank = 154
+My guessed rank = 173
+My guessed rank = 122
+My guessed rank = 171
+My guessed rank = 145
+My guessed rank = 118
+My guessed rank = 45
+My guessed rank = 176
+My guessed rank = 35
+My guessed rank = 112
+My guessed rank = 94
+My guessed rank = 121
+My guessed rank = 125
+My guessed rank = 60
+My guessed rank = 109
+My guessed rank = 10
+My guessed rank = 133
+My guessed rank = 172
+My guessed rank = 163
+My guessed rank = 93
+My guessed rank = 116
+My guessed rank = 111
+My guessed rank = 40
+My guessed rank = 7
+My guessed rank = 32
+My guessed rank = 136
+My guessed rank = 153
+My guessed rank = 87
+My guessed rank = 1
+My guessed rank = 108
+My guessed rank = 165
+My guessed rank = 71
+My guessed rank = 44
+My guessed rank = 146
+My guessed rank = 63
+My guessed rank = 123
+My guessed rank = 131
+My guessed rank = 119
+My guessed rank = 149
+My guessed rank = 160
+My guessed rank = 46
+My guessed rank = 26
+My guessed rank = 147
+My guessed rank = 110
+My guessed rank = 148
+My guessed rank = 67
+My guessed rank = 132
+My guessed rank = 70
+My guessed rank = 117
+My guessed rank = 143
+My guessed rank = 90
+My guessed rank = 180
+My guessed rank = 31
+My guessed rank = 126
+My guessed rank = 68
+My guessed rank = 61
+My guessed rank = 129
+My guessed rank = 128
+My guessed rank = 41
+My guessed rank = 107
+My guessed rank = 161
+My guessed rank = 140
+My guessed rank = 34
+My guessed rank = 49
+My guessed rank = 78
+My guessed rank = 95
+My guessed rank = 47
+My guessed rank = 169
+My guessed rank = 92
+My guessed rank = 6
+My guessed rank = 86
+My guessed rank = 170
+My guessed rank = 178
+My guessed rank = 177
+My guessed rank = 179
+My guessed rank = 98
+My guessed rank = 166
+My guessed rank = 33
+My guessed rank = 3
+My guessed rank = 42
+My guessed rank = 4
+My guessed rank = 135
+My guessed rank = 183
+My guessed rank = 139
+My guessed rank = 29
+My guessed rank = 59
+My guessed rank = 167
+My guessed rank = 85
+My guessed rank = 137
+My guessed rank = 181
+My guessed rank = 164
+My guessed rank = 89
+My guessed rank = 83
+My guessed rank = 162
+My guessed rank = 27
+My guessed rank = 102
+My guessed rank = 43
+My guessed rank = 142
+My guessed rank = 25
+My guessed rank = 5
+My guessed rank = 91
+My guessed rank = 50
+My guessed rank = 9
+My guessed rank = 88
+My guessed rank = 84
+My guessed rank = 190
+My guessed rank = 158
+My guessed rank = 8
+My guessed rank = 11
+My guessed rank = 138
+My guessed rank = 82
+My guessed rank = 106
+My guessed rank = 141
+My guessed rank = 134
+My guessed rank = 2
+My guessed rank = 36
+My guessed rank = 39
+My guessed rank = 30
+My guessed rank = 38
+My guessed rank = 37
+My guessed rank = 28
+My guessed rank = 189
+My guessed rank = 24
+My guessed rank = 159
+My guessed rank = 104
+My guessed rank = 81
+My guessed rank = 157
+My guessed rank = 187
+My guessed rank = 156
+My guessed rank = 54
+My guessed rank = 74
+My guessed rank = 191
+My guessed rank = 48
+My guessed rank = 55
+My guessed rank = 56
+My guessed rank = 99
+My guessed rank = 97
+My guessed rank = 186
+My guessed rank = 53
+My guessed rank = 101
+My guessed rank = 75
+My guessed rank = 182
+My guessed rank = 184
+My guessed rank = 185
+My guessed rank = 188
+My guessed rank = 96
+My guessed rank = 105
+My guessed rank = 100
+My guessed rank = 103
+My guessed rank = 51
+My guessed rank = 58
+My guessed rank = 57
+My guessed rank = 76
+My guessed rank = 72
+My guessed rank = 52
+My guessed rank = 79
+My guessed rank = 77
+My guessed rank = 73
+My guessed rank = 80
+My guessed rank = 16
+My guessed rank = 21
+My guessed rank = 20
+My guessed rank = 13
+My guessed rank = 19
+My guessed rank = 23
+My guessed rank = 22
+My guessed rank = 18
+My guessed rank = 12
+My guessed rank = 17
+My guessed rank = 14
+My guessed rank = 15
+RANK: 112
+589824 192
+[rank 112] failed for some reason
+RANK: 109
+589824 192
+[rank 109] failed for some reason
+RANK: 110
+589824 192
+[rank 110] failed for some reason
+RANK: 111
+589824 192
+[rank 111] failed for some reason
+RANK: 113
+589824 192
+[rank 113] failed for some reason
+RANK: 114
+589824 192
+[rank 114] failed for some reason
+RANK: 116
+589824 192
+[rank 116] failed for some reason
+RANK: 118
+589824 192
+[rank 118] failed for some reason
+RANK: 108
+589824 192
+[rank 108] failed for some reason
+RANK: 115
+589824 192
+[rank 115] failed for some reason
+RANK: 117
+589824 192
+[rank 117] failed for some reason
+RANK: 20
+589824 192
+[rank 20] failed for some reason
+RANK: 15
+589824 192
+[rank 15] failed for some reason
+RANK: 14
+589824 192
+[rank 14] failed for some reason
+RANK: 18
+589824 192
+[rank 18] failed for some reason
+RANK: 21
+589824 192
+[rank 21] failed for some reason
+RANK: 16
+589824 192
+[rank 16] failed for some reason
+RANK: 19
+589824 192
+[rank 19] failed for some reason
+RANK: 22
+589824 192
+[rank 22] failed for some reason
+RANK: 12
+589824 192
+[rank 12] failed for some reason
+RANK: 13
+589824 192
+[rank 13] failed for some reason
+RANK: 17
+589824 192
+[rank 17] failed for some reason
+RANK: 87
+589824 192
+[rank 87] failed for some reason
+RANK: 90
+589824 192
+[rank 90] failed for some reason
+RANK: 86
+589824 192
+[rank 86] failed for some reason
+RANK: 94
+589824 192
+[rank 94] failed for some reason
+RANK: 91
+589824 192
+[rank 91] failed for some reason
+RANK: 92
+589824 192
+[rank 92] failed for some reason
+RANK: 93
+589824 192
+[rank 93] failed for some reason
+RANK: 84
+589824 192
+[rank 84] failed for some reason
+RANK: 85
+589824 192
+[rank 85] failed for some reason
+RANK: 88
+589824 192
+[rank 88] failed for some reason
+RANK: 89
+589824 192
+[rank 89] failed for some reason
+RANK: 51
+589824 192
+[rank 51] failed for some reason
+RANK: 50
+589824 192
+[rank 50] failed for some reason
+RANK: 53
+589824 192
+[rank 53] failed for some reason
+RANK: 54
+589824 192
+[rank 54] failed for some reason
+RANK: 56
+589824 192
+[rank 56] failed for some reason
+RANK: 57
+589824 192
+[rank 57] failed for some reason
+RANK: 48
+589824 192
+[rank 48] failed for some reason
+RANK: 49
+589824 192
+[rank 49] failed for some reason
+RANK: 52
+589824 192
+[rank 52] failed for some reason
+RANK: 55
+589824 192
+[rank 55] failed for some reason
+RANK: 58
+589824 192
+[rank 58] failed for some reason
+RANK: 30
+589824 192
+[rank 30] failed for some reason
+RANK: 27
+589824 192
+[rank 27] failed for some reason
+RANK: 29
+589824 192
+[rank 29] failed for some reason
+RANK: 31
+589824 192
+[rank 31] failed for some reason
+RANK: 33
+589824 192
+[rank 33] failed for some reason
+RANK: 24
+589824 192
+[rank 24] failed for some reason
+RANK: 25
+589824 192
+[rank 25] failed for some reason
+RANK: 34
+589824 192
+[rank 34] failed for some reason
+RANK: 28
+589824 192
+[rank 28] failed for some reason
+RANK: 32
+589824 192
+[rank 32] failed for some reason
+RANK: 26
+589824 192
+[rank 26] failed for some reason
+RANK: 63
+589824 192
+[rank 63] failed for some reason
+RANK: 64
+589824 192
+[rank 64] failed for some reason
+RANK: 60
+589824 192
+[rank 60] failed for some reason
+RANK: 61
+589824 192
+[rank 61] failed for some reason
+RANK: 62
+589824 192
+[rank 62] failed for some reason
+RANK: 171
+589824 192
+[rank 171] failed for some reason
+RANK: 65
+589824 192
+[rank 65] failed for some reason
+RANK: 172
+589824 192
+[rank 172] failed for some reason
+RANK: 175
+589824 192
+[rank 175] failed for some reason
+RANK: 66
+589824 192
+[rank 66] failed for some reason
+RANK: 178
+589824 192
+[rank 178] failed for some reason
+RANK: 67
+589824 192
+[rank 67] failed for some reason
+RANK: 174
+589824 192
+[rank 174] failed for some reason
+RANK: 68
+589824 192
+[rank 68] failed for some reason
+RANK: 176
+589824 192
+[rank 176] failed for some reason
+RANK: 69
+589824 192
+[rank 69] failed for some reason
+RANK: 169
+589824 192
+[rank 169] failed for some reason
+RANK: 170
+589824 192
+[rank 170] failed for some reason
+RANK: 70
+589824 192
+[rank 70] failed for some reason
+RANK: 173
+589824 192
+[rank 173] failed for some reason
+RANK: 177
+589824 192
+[rank 177] failed for some reason
+RANK: 125
+589824 192
+[rank 125] failed for some reason
+RANK: 168
+589824 192
+[rank 168] failed for some reason
+RANK: 121
+589824 192
+[rank 121] failed for some reason
+RANK: 122
+589824 192
+[rank 122] failed for some reason
+RANK: 123
+589824 192
+[rank 123] failed for some reason
+RANK: 124
+589824 192
+[rank 124] failed for some reason
+RANK: 126
+589824 192
+[rank 126] failed for some reason
+RANK: 129
+589824 192
+[rank 129] failed for some reason
+RANK: 120
+589824 192
+[rank 120] failed for some reason
+RANK: 127
+589824 192
+[rank 127] failed for some reason
+RANK: 128
+589824 192
+[rank 128] failed for some reason
+RANK: 130
+589824 192
+[rank 130] failed for some reason
+RANK: 135
+589824 192
+[rank 135] failed for some reason
+RANK: 133
+589824 192
+[rank 133] failed for some reason
+RANK: 134
+589824 192
+[rank 134] failed for some reason
+RANK: 136
+589824 192
+[rank 136] failed for some reason
+RANK: 137
+589824 192
+[rank 137] failed for some reason
+RANK: 138
+589824 192
+[rank 138] failed for some reason
+RANK: 139
+589824 192
+[rank 139] failed for some reason
+RANK: 140
+589824 192
+[rank 140] failed for some reason
+RANK: 141
+589824 192
+[rank 141] failed for some reason
+RANK: 142
+589824 192
+[rank 142] failed for some reason
+RANK: 132
+589824 192
+[rank 132] failed for some reason
+RANK: 166
+589824 192
+[rank 166] failed for some reason
+RANK: 159
+589824 192
+[rank 159] failed for some reason
+RANK: 165
+589824 192
+[rank 165] failed for some reason
+RANK: 157
+589824 192
+[rank 157] failed for some reason
+RANK: 158
+589824 192
+[rank 158] failed for some reason
+RANK: 162
+589824 192
+[rank 162] failed for some reason
+RANK: 161
+589824 192
+[rank 161] failed for some reason
+RANK: 163
+589824 192
+[rank 163] failed for some reason
+RANK: 164
+589824 192
+[rank 164] failed for some reason
+RANK: 156
+589824 192
+[rank 156] failed for some reason
+RANK: 160
+589824 192
+[rank 160] failed for some reason
+RANK: 79
+589824 192
+[rank 79] failed for some reason
+RANK: 76
+589824 192
+[rank 76] failed for some reason
+RANK: 74
+589824 192
+[rank 74] failed for some reason
+RANK: 80
+589824 192
+[rank 80] failed for some reason
+RANK: 73
+589824 192
+[rank 73] failed for some reason
+RANK: 75
+589824 192
+[rank 75] failed for some reason
+RANK: 77
+589824 192
+[rank 77] failed for some reason
+RANK: 78
+589824 192
+[rank 78] failed for some reason
+RANK: 81
+589824 192
+[rank 81] failed for some reason
+RANK: 82
+589824 192
+[rank 82] failed for some reason
+RANK: 72
+589824 192
+[rank 72] failed for some reason
+RANK: 154
+589824 192
+[rank 154] failed for some reason
+RANK: 147
+589824 192
+[rank 147] failed for some reason
+RANK: 148
+589824 192
+[rank 148] failed for some reason
+RANK: 153
+589824 192
+[rank 153] failed for some reason
+RANK: 151
+589824 192
+[rank 151] failed for some reason
+RANK: 145
+589824 192
+[rank 145] failed for some reason
+RANK: 149
+589824 192
+[rank 149] failed for some reason
+RANK: 150
+589824 192
+[rank 150] failed for some reason
+RANK: 144
+589824 192
+[rank 144] failed for some reason
+RANK: 146
+589824 192
+[rank 146] failed for some reason
+RANK: 152
+589824 192
+[rank 152] failed for some reason
+RANK: 46
+589824 192
+[rank 46] failed for some reason
+RANK: 40
+589824 192
+[rank 40] failed for some reason
+RANK: 43
+589824 192
+[rank 43] failed for some reason
+RANK: 38
+589824 192
+[rank 38] failed for some reason
+RANK: 42
+589824 192
+[rank 42] failed for some reason
+RANK: 44
+589824 192
+[rank 44] failed for some reason
+RANK: 37
+589824 192
+[rank 37] failed for some reason
+RANK: 39
+589824 192
+[rank 39] failed for some reason
+RANK: 45
+589824 192
+[rank 45] failed for some reason
+RANK: 41
+589824 192
+[rank 41] failed for some reason
+RANK: 36
+589824 192
+[rank 36] failed for some reason
+RANK: 106
+589824 192
+[rank 106] failed for some reason
+RANK: 99
+589824 192
+[rank 99] failed for some reason
+RANK: 98
+589824 192
+[rank 98] failed for some reason
+RANK: 100
+589824 192
+[rank 100] failed for some reason
+RANK: 97
+589824 192
+[rank 97] failed for some reason
+RANK: 101
+589824 192
+[rank 101] failed for some reason
+RANK: 104
+589824 192
+[rank 104] failed for some reason
+RANK: 105
+589824 192
+[rank 105] failed for some reason
+RANK: 103
+589824 192
+[rank 103] failed for some reason
+RANK: 96
+589824 192
+[rank 96] failed for some reason
+RANK: 107
+589824 192
+[rank 107] failed for some reason
+RANK: 3
+589824 192
+[rank 3] failed for some reason
+RANK: 4
+589824 192
+[rank 4] failed for some reason
+RANK: 8
+589824 192
+[rank 8] failed for some reason
+RANK: 2
+589824 192
+[rank 2] failed for some reason
+RANK: 6
+589824 192
+[rank 6] failed for some reason
+RANK: 9
+589824 192
+[rank 9] failed for some reason
+RANK: 10
+589824 192
+[rank 10] failed for some reason
+RANK: 1
+589824 192
+[rank 1] failed for some reason
+RANK: 5
+589824 192
+[rank 5] failed for some reason
+RANK: 7
+589824 192
+[rank 7] failed for some reason
+RANK: 11
+589824 192
+[rank 11] failed for some reason
+RANK: 184
+589824 192
+[rank 184] failed for some reason
+RANK: 189
+589824 192
+[rank 189] failed for some reason
+RANK: 185
+589824 192
+[rank 185] failed for some reason
+RANK: 186
+589824 192
+[rank 186] failed for some reason
+RANK: 188
+589824 192
+[rank 188] failed for some reason
+RANK: 190
+589824 192
+[rank 190] failed for some reason
+RANK: 181
+589824 192
+[rank 181] failed for some reason
+RANK: 183
+589824 192
+[rank 183] failed for some reason
+RANK: 191
+589824 192
+[rank 191] failed for some reason
+RANK: 180
+589824 192
+[rank 180] failed for some reason
+RANK: 187
+589824 192
+[rank 187] failed for some reason
+RANK: 102
+589824 192
+[rank 102] failed for some reason
+RANK: 182
+589824 192
+[rank 182] failed for some reason
+RANK: 119
+589824 192
+[rank 119] failed for some reason
+RANK: 35
+589824 192
+[rank 35] failed for some reason
+RANK: 23
+589824 192
+[rank 23] failed for some reason
+RANK: 59
+589824 192
+[rank 59] failed for some reason
+RANK: 167
+589824 192
+[rank 167] failed for some reason
+RANK: 95
+589824 192
+[rank 95] failed for some reason
+RANK: 179
+589824 192
+[rank 179] failed for some reason
+RANK: 71
+589824 192
+[rank 71] failed for some reason
+RANK: 143
+589824 192
+[rank 143] failed for some reason
+RANK: 131
+589824 192
+[rank 131] failed for some reason
+RANK: 155
+589824 192
+[rank 155] failed for some reason
+RANK: 47
+589824 192
+[rank 47] failed for some reason
+RANK: 83
+589824 192
+[rank 83] failed for some reason
+RANK: 0
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 589824
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+589824 192
+ngpus: 192, causal: True, batch: 4, seqlen: 589824, num_heads: 32, head_dim: 64
+Benchmark failed for ringX1_attn_func [fwd_bwd]: XPU out of memory. Tried to allocate 9.00 GiB. GPU 0 has a total capacity of 63.98 GiB of which 8.59 GiB is free. Of the allocated memory 54.28 GiB is allocated by PyTorch, and 144.00 MiB is reserved by PyTorch but unallocated. Please use `empty_cache` to release all unoccupied cached memory.
+Traceback (most recent call last):
+  File "/lus/flare/projects/FoundMedicine/jahatef/ringX-attention-alcf/benchmark/benchmark_ringX_func.py", line 594, in <module>
+    result = benchmark(
+             ^^^^^^^^^^
+  File "/lus/flare/projects/FoundMedicine/jahatef/ringX-attention-alcf/benchmark/benchmark_ringX_func.py", line 404, in benchmark
+    _warmup(
+  File "/lus/flare/projects/FoundMedicine/jahatef/ringX-attention-alcf/benchmark/benchmark_ringX_func.py", line 246, in _warmup
+    out.backward(dout)
+  File "/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/_tensor.py", line 630, in backward
+    torch.autograd.backward(
+  File "/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/autograd/__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: XPU out of memory. Tried to allocate 9.00 GiB. GPU 0 has a total capacity of 63.98 GiB of which 8.59 GiB is free. Of the allocated memory 54.28 GiB is allocated by PyTorch, and 144.00 MiB is reserved by PyTorch but unallocated. Please use `empty_cache` to release all unoccupied cached memory.
+
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX1_attn", "backward_backend": "error", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "error", "head_dim": 64, "impl": "ringX1_attn_func", "iter_per_s": null, "mode": "fwd_bwd", "ngpus": 192, "num_heads": 32, "reason": "OutOfMemoryError: XPU out of memory. Tried to allocate 9.00 GiB. GPU 0 has a total capacity of 63.98 GiB of which 8.59 GiB is free. Of the allocated memory 54.28 GiB is allocated by PyTorch, and 144.00 MiB is reserved by PyTorch but unallocated. Please use `empty_cache` to release all unoccupied cached memory.", "requested_backend": "auto", "seqlen": 589824, "status": "failed", "total_sec": null}
+[rank 0] failed for some reason
+RANK: 106
+589824 192
+[rank 106] failed for some reason
+My guessed rank = 106
+RANK: 10
+589824 192
+[rank 10] failed for some reason
+My guessed rank = 10
+RANK: 189
+589824 192
+[rank 189] failed for some reason
+My guessed rank = 189
+My guessed rank = 0
+2026:10:09-11:51:32:782119 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:09-11:51:32:782119 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+My guessed rank = 169
+My guessed rank = 108
+My guessed rank = 121
+My guessed rank = 144
+My guessed rank = 175
+My guessed rank = 111
+My guessed rank = 62
+My guessed rank = 64
+My guessed rank = 63
+My guessed rank = 113
+My guessed rank = 131
+My guessed rank = 170
+My guessed rank = 67
+My guessed rank = 60
+My guessed rank = 176
+My guessed rank = 19
+My guessed rank = 115
+My guessed rank = 123
+My guessed rank = 71
+My guessed rank = 112
+My guessed rank = 168
+My guessed rank = 70
+My guessed rank = 65
+My guessed rank = 155
+My guessed rank = 14
+My guessed rank = 147
+My guessed rank = 122
+My guessed rank = 124
+My guessed rank = 148
+My guessed rank = 145
+My guessed rank = 84
+My guessed rank = 127
+My guessed rank = 161
+My guessed rank = 110
+My guessed rank = 46
+My guessed rank = 125
+My guessed rank = 179
+My guessed rank = 120
+My guessed rank = 38
+My guessed rank = 23
+My guessed rank = 140
+My guessed rank = 149
+My guessed rank = 154
+My guessed rank = 119
+My guessed rank = 86
+My guessed rank = 41
+My guessed rank = 69
+My guessed rank = 92
+My guessed rank = 18
+My guessed rank = 33
+My guessed rank = 114
+My guessed rank = 163
+My guessed rank = 9
+My guessed rank = 45
+My guessed rank = 61
+My guessed rank = 178
+My guessed rank = 68
+My guessed rank = 66
+My guessed rank = 21
+My guessed rank = 171
+My guessed rank = 91
+My guessed rank = 26
+My guessed rank = 3
+My guessed rank = 37
+My guessed rank = 160
+My guessed rank = 34
+My guessed rank = 129
+My guessed rank = 135
+My guessed rank = 17
+My guessed rank = 118
+My guessed rank = 2
+My guessed rank = 139
+My guessed rank = 16
+My guessed rank = 146
+My guessed rank = 150
+My guessed rank = 126
+My guessed rank = 130
+My guessed rank = 151
+My guessed rank = 128
+My guessed rank = 109
+My guessed rank = 116
+My guessed rank = 117
+My guessed rank = 172
+My guessed rank = 173
+My guessed rank = 28
+My guessed rank = 152
+My guessed rank = 153
+My guessed rank = 191
+My guessed rank = 36
+My guessed rank = 177
+My guessed rank = 174
+My guessed rank = 101
+My guessed rank = 5
+My guessed rank = 47
+My guessed rank = 88
+My guessed rank = 35
+My guessed rank = 12
+My guessed rank = 165
+My guessed rank = 85
+My guessed rank = 134
+My guessed rank = 49
+My guessed rank = 187
+My guessed rank = 106
+My guessed rank = 143
+My guessed rank = 4
+My guessed rank = 164
+My guessed rank = 32
+My guessed rank = 72
+My guessed rank = 90
+My guessed rank = 7
+My guessed rank = 59
+My guessed rank = 39
+My guessed rank = 93
+My guessed rank = 159
+My guessed rank = 83
+My guessed rank = 42
+My guessed rank = 132
+My guessed rank = 183
+My guessed rank = 141
+My guessed rank = 29
+My guessed rank = 20
+My guessed rank = 13
+My guessed rank = 22
+My guessed rank = 15
+My guessed rank = 48
+My guessed rank = 40
+My guessed rank = 97
+My guessed rank = 11
+My guessed rank = 43
+My guessed rank = 44
+My guessed rank = 94
+My guessed rank = 74
+My guessed rank = 142
+My guessed rank = 10
+My guessed rank = 158
+My guessed rank = 185
+My guessed rank = 87
+My guessed rank = 89
+My guessed rank = 8
+My guessed rank = 95
+My guessed rank = 105
+My guessed rank = 51
+My guessed rank = 6
+My guessed rank = 1
+My guessed rank = 24
+My guessed rank = 180
+My guessed rank = 79
+My guessed rank = 104
+My guessed rank = 27
+My guessed rank = 30
+My guessed rank = 167
+My guessed rank = 31
+My guessed rank = 138
+My guessed rank = 73
+My guessed rank = 133
+My guessed rank = 25
+My guessed rank = 136
+My guessed rank = 137
+My guessed rank = 182
+My guessed rank = 96
+My guessed rank = 55
+My guessed rank = 186
+My guessed rank = 53
+My guessed rank = 76
+My guessed rank = 166
+My guessed rank = 107
+My guessed rank = 156
+My guessed rank = 157
+My guessed rank = 162
+My guessed rank = 58
+My guessed rank = 57
+My guessed rank = 190
+My guessed rank = 98
+My guessed rank = 50
+My guessed rank = 75
+My guessed rank = 181
+My guessed rank = 189
+My guessed rank = 184
+My guessed rank = 52
+My guessed rank = 56
+My guessed rank = 188
+My guessed rank = 54
+My guessed rank = 99
+My guessed rank = 78
+My guessed rank = 102
+My guessed rank = 100
+My guessed rank = 103
+My guessed rank = 77
+My guessed rank = 81
+My guessed rank = 82
+My guessed rank = 80
+RANK: 8
+589824 192
+[rank 8] failed for some reason
+My guessed rank = 8
+RANK: 103
+589824 192
+[rank 103] failed for some reason
+My guessed rank = 103
+RANK: 183
+589824 192
+[rank 183] failed for some reason
+My guessed rank = 183
+RANK: 186
+589824 192
+[rank 186] failed for some reason
+My guessed rank = 186
+RANK: 98
+589824 192
+[rank 98] failed for some reason
+My guessed rank = 98
+RANK: 185
+589824 192
+[rank 185] failed for some reason
+My guessed rank = 185
+RANK: 107
+589824 192
+[rank 107] failed for some reason
+My guessed rank = 107
+RANK: 182
+589824 192
+[rank 182] failed for some reason
+My guessed rank = 182
+RANK: 191
+589824 192
+[rank 191] failed for some reason
+My guessed rank = 191
+RANK: 96
+589824 192
+[rank 96] failed for some reason
+My guessed rank = 96
+RANK: 188
+589824 192
+[rank 188] failed for some reason
+My guessed rank = 188
+RANK: 184
+589824 192
+[rank 184] failed for some reason
+My guessed rank = 184
+RANK: 180
+589824 192
+[rank 180] failed for some reason
+My guessed rank = 180
+RANK: 187
+589824 192
+[rank 187] failed for some reason
+My guessed rank = 187
+RANK: 190
+589824 192
+[rank 190] failed for some reason
+My guessed rank = 190
+RANK: 181
+589824 192
+[rank 181] failed for some reason
+My guessed rank = 181
+RANK: 97
+589824 192
+[rank 97] failed for some reason
+My guessed rank = 97
+RANK: 105
+589824 192
+[rank 105] failed for some reason
+My guessed rank = 105
+RANK: 7
+589824 192
+[rank 7] failed for some reason
+My guessed rank = 7
+RANK: 101
+589824 192
+[rank 101] failed for some reason
+My guessed rank = 101
+RANK: 1
+589824 192
+[rank 1] failed for some reason
+My guessed rank = 1
+RANK: 104
+589824 192
+[rank 104] failed for some reason
+My guessed rank = 104
+RANK: 100
+589824 192
+[rank 100] failed for some reason
+My guessed rank = 100
+RANK: 2
+589824 192
+[rank 2] failed for some reason
+My guessed rank = 2
+RANK: 9
+589824 192
+[rank 9] failed for some reason
+My guessed rank = 9
+RANK: 6
+589824 192
+[rank 6] failed for some reason
+My guessed rank = 6
+RANK: 3
+589824 192
+[rank 3] failed for some reason
+My guessed rank = 3
+RANK: 11
+589824 192
+[rank 11] failed for some reason
+My guessed rank = 11
+RANK: 5
+589824 192
+[rank 5] failed for some reason
+My guessed rank = 5
+RANK: 4
+589824 192
+[rank 4] failed for some reason
+My guessed rank = 4
+My guessed rank = 0
+RANK: 99
+589824 192
+[rank 99] failed for some reason
+My guessed rank = 99
+RANK: 102
+589824 192
+[rank 102] failed for some reason
+My guessed rank = 102

@@ -1,0 +1,1007 @@
+local_rank: 1
+rank is 1
+local_rank: 7
+rank is 7
+local_rank: 0
+rank is 0
+local_rank: 2
+rank is 2
+local_rank: 3
+rank is 3
+local_rank: 4
+rank is 4
+local_rank: 5
+rank is 5
+local_rank: 6
+rank is 6
+local_rank: 8
+rank is 8
+local_rank: 9
+rank is 9
+local_rank: 10
+rank is 10
+local_rank: 11
+rank is 11
+2026:10:27-23:27:24:613924 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-23:27:24:613924 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 24576
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+ngpus: 12, causal: True, batch: 4, seqlen: 24576, num_heads: 32, head_dim: 64
+1.688226 iter/s, 59.234 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX1_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX1_attn_func", "iter_per_s": 1.6882257397747118, "mode": "fwd_bwd", "ngpus": 12, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 24576, "status": "ok", "total_sec": 59.23378470307216}
+2026:10:27-23:30:30:614384 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-23:30:30:614384 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX2_attn
+Batch size: 4
+Sequence length: 24576
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX2_attn_func [fwd_bwd]
+ngpus: 12, causal: True, batch: 4, seqlen: 24576, num_heads: 32, head_dim: 64
+1.673602 iter/s, 59.751 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX2_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX2_attn_func", "iter_per_s": 1.673602287710568, "mode": "fwd_bwd", "ngpus": 12, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 24576, "status": "ok", "total_sec": 59.751352357910946}
+2026:10:27-23:33:37:614843 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-23:33:37:614843 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: NoneAutotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 708.55s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 714.62s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 719.19s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotu
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotu
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotu
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 714.06s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 717.90s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+ning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 714.18s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+ning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 711.68s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+ning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 721.56s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotu
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 719.36s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 715.80s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+ning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 128, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (2048, 1024, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 719.66s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None;
+Algo: ringX_attn.ringX3_attn
+Batch size: 4
+Sequence length: 24576
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX3_attn_func [fwd_bwd]
+ngpus: 12, causal: True, batch: 4, seqlen: 24576, num_heads: 32, head_dim: 64
+3.828624 iter/s, 26.119 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX3_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX3_attn_func", "iter_per_s": 3.8286243535027573, "mode": "fwd_bwd", "ngpus": 12, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 24576, "status": "ok", "total_sec": 26.119041923899204}
+2026:10:27-23:46:42:615316 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-23:46:42:615316 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX4_attn
+Batch size: 4
+Sequence length: 24576
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX4_attn_func [fwd_bwd]
+ngpus: 12, causal: True, batch: 4, seqlen: 24576, num_heads: 32, head_dim: 64
+0.629299 iter/s, 158.907 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX4_attn", "backward_backend": "portable", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "portable", "head_dim": 64, "impl": "ringX4_attn_func", "iter_per_s": 0.6292991515925349, "mode": "fwd_bwd", "ngpus": 12, "num_heads": 32, "reason": "", "requested_backend": "portable", "seqlen": 24576, "status": "ok", "total_sec": 158.9069359889254}

@@ -1,0 +1,484 @@
+local_rank: 3
+rank is 3
+local_rank: 6
+rank is 6
+local_rank: 0
+rank is 0
+local_rank: 5
+rank is 5
+local_rank: 8
+rank is 8
+local_rank: 4
+rank is 4
+local_rank: 1
+rank is 1
+local_rank: 7
+rank is 7
+local_rank: 2
+rank is 2
+local_rank: 9
+rank is 9
+local_rank: 10
+rank is 10
+local_rank: 11
+rank is 11
+local_rank: 0
+rank is 12
+local_rank: 1
+rank is 13
+local_rank: 2
+rank is 14
+local_rank: 3
+rank is 15
+local_rank: 4
+rank is 16
+local_rank: 5
+rank is 17
+local_rank: 6
+rank is 18
+local_rank: 7
+rank is 19
+local_rank: 8
+rank is 20
+local_rank: 9
+rank is 21
+local_rank: 10
+rank is 22
+local_rank: 11
+rank is 23
+My guessed rank = 0
+2026:10:07-21:48:30:434039 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:07-21:48:30:434039 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+My guessed rank = 17
+My guessed rank = 20
+My guessed rank = 16
+My guessed rank = 23
+My guessed rank = 15
+My guessed rank = 12
+My guessed rank = 9
+My guessed rank = 14
+My guessed rank = 2
+My guessed rank = 22
+My guessed rank = 8
+My guessed rank = 13
+My guessed rank = 18
+My guessed rank = 21
+My guessed rank = 19
+My guessed rank = 10
+My guessed rank = 1
+My guessed rank = 4
+My guessed rank = 5
+My guessed rank = 6
+My guessed rank = 7
+My guessed rank = 3
+My guessed rank = 11
+RANK: 4
+73728 24
+RANK: 10
+73728 24
+RANK: 1
+73728 24
+RANK: 3
+73728 24
+RANK: 5
+73728 24
+RANK: 6
+73728 24
+RANK: 7
+73728 24
+RANK: 8
+73728 24
+RANK: 9
+73728 24
+RANK: 11
+73728 24
+RANK: 2
+73728 24
+RANK: 16
+73728 24
+RANK: 14
+73728 24
+RANK: 18
+73728 24
+RANK: 19
+73728 24
+RANK: 20
+73728 24
+RANK: 22
+73728 24
+RANK: 12
+73728 24
+RANK: 13
+73728 24
+RANK: 15
+73728 24
+RANK: 17
+73728 24
+RANK: 23
+73728 24
+RANK: 21
+73728 24
+RANK: 0
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 73728
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+73728 24
+ngpus: 24, causal: True, batch: 4, seqlen: 73728, num_heads: 32, head_dim: 64
+0.339128 iter/s, 294.874 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX1_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX1_attn_func", "iter_per_s": 0.33912827511989413, "mode": "fwd_bwd", "ngpus": 24, "num_heads": 32, "reason": "", "requested_backend": "auto", "seqlen": 73728, "status": "ok", "total_sec": 294.8736726969946}
+My guessed rank = 0
+2026:10:07-22:00:39:434631 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:07-22:00:39:434631 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+My guessed rank = 20
+My guessed rank = 16
+My guessed rank = 13
+My guessed rank = 23
+My guessed rank = 17
+My guessed rank = 2
+My guessed rank = 12
+My guessed rank = 19
+My guessed rank = 5
+My guessed rank = 15
+My guessed rank = 22
+My guessed rank = 18
+My guessed rank = 6
+My guessed rank = 14
+My guessed rank = 21
+My guessed rank = 1
+My guessed rank = 11
+My guessed rank = 4
+My guessed rank = 7
+My guessed rank = 9
+My guessed rank = 3
+My guessed rank = 10
+My guessed rank = 8
+RANK: 8
+73728 24
+RANK: 1
+73728 24
+RANK: 4
+73728 24
+RANK: 3
+73728 24
+RANK: 5
+73728 24
+RANK: 9
+73728 24
+RANK: 6
+73728 24
+RANK: 7
+73728 24
+RANK: 10
+73728 24
+RANK: 11
+73728 24
+RANK: 22
+73728 24
+RANK: 20
+73728 24
+RANK: 19
+73728 24
+RANK: 21
+73728 24
+RANK: 15
+73728 24
+RANK: 17
+73728 24
+RANK: 13
+73728 24
+RANK: 14
+73728 24
+RANK: 16
+73728 24
+RANK: 18
+73728 24
+RANK: 23
+73728 24
+RANK: 2
+73728 24
+RANK: 12
+73728 24
+RANK: 0
+Algo: ringX_attn.ringX2_attn
+Batch size: 4
+Sequence length: 73728
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX2_attn_func [fwd_bwd]
+73728 24
+ngpus: 24, causal: True, batch: 4, seqlen: 73728, num_heads: 32, head_dim: 64
+0.329363 iter/s, 303.617 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX2_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX2_attn_func", "iter_per_s": 0.3293625873017568, "mode": "fwd_bwd", "ngpus": 24, "num_heads": 32, "reason": "", "requested_backend": "auto", "seqlen": 73728, "status": "ok", "total_sec": 303.61675507601467}
+My guessed rank = 0
+2026:10:07-22:13:02:435220 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:07-22:13:02:435220 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+My guessed rank = 19
+My guessed rank = 16
+My guessed rank = 15
+My guessed rank = 14
+My guessed rank = 21
+My guessed rank = 2
+My guessed rank = 13
+My guessed rank = 18
+My guessed rank = 6
+My guessed rank = 12
+My guessed rank = 8
+My guessed rank = 23
+My guessed rank = 17
+My guessed rank = 20
+My guessed rank = 22
+My guessed rank = 4
+My guessed rank = 11
+My guessed rank = 9
+My guessed rank = 7
+My guessed rank = 5
+My guessed rank = 3
+My guessed rank = 10
+My guessed rank = 1
+RANK: 4
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.08s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 14
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 16
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 13
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 15
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.23s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 17
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 18
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 19
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 22
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 20
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.20s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 21
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.21s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 23
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.20s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 1
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 10.97s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 5
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.08s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 10
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.08s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 2
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.08s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 3
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.10s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 7
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 10.96s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 6
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.09s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 8
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 10.97s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 11
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.08s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 9
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.09s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None;
+RANK: 12
+73728 24
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd_two_phase_asym with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_bwd_two_phase_asym,
+with key as (3072, 1536, 64, True, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.float32', 'torch.float32'),
+finished after 11.22s,
+best config selected: BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None;
+RANK: 0
+Algo: ringX_attn.ringX3_attn
+Batch size: 4
+Sequence length: 73728
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX3_attn_func [fwd_bwd]
+73728 24
+ngpus: 24, causal: True, batch: 4, seqlen: 73728, num_heads: 32, head_dim: 64
+0.866838 iter/s, 115.362 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX3_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX3_attn_func", "iter_per_s": 0.866838056365548, "mode": "fwd_bwd", "ngpus": 24, "num_heads": 32, "reason": "", "requested_backend": "auto", "seqlen": 73728, "status": "ok", "total_sec": 115.36180174100446}

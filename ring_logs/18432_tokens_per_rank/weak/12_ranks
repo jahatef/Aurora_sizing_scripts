@@ -1,0 +1,24 @@
+local_rank: 2
+rank is 2
+local_rank: 0
+rank is 0
+local_rank: 1
+rank is 1
+local_rank: 3
+rank is 3
+local_rank: 4
+rank is 4
+local_rank: 5
+rank is 5
+local_rank: 6
+rank is 6
+local_rank: 7
+rank is 7
+local_rank: 8
+rank is 8
+local_rank: 9
+rank is 9
+local_rank: 10
+rank is 10
+local_rank: 11
+rank is 11
