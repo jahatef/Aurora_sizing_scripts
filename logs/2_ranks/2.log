@@ -1,0 +1,576 @@
+NeoXArgs.from_ymls() ['/lus/flare/projects/FoundMedicine/jahatef/sizing/scripts/configs/2-7B.yml', '/lus/flare/projects/FoundMedicine/jahatef/sizing/scripts/configs/cp-yamls/cp2.yml', '/lus/flare/projects/FoundMedicine/jahatef/sizing/scripts/configs/seq_configs/4096.yml', '/lus/flare/projects/FoundMedicine/jahatef/gpt-neox/configs/local_setup_wandb.yml']
+INFO:root:NeoXArgs.calculate_derived() Total number of GPUs determined to be: 2
+WARNING:root:Outstanding DeepSpeed issue means that pp>0, zero1, and bf16 will break without fp32 grads
+-------------------- arguments --------------------
+  attention_config ................ ['ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3', 'ringX3']updated
+  batch_size ...................... 14..........................updated
+  bf16 ............................ {'enabled': True}...........updated
+  checkpoint_activations .......... True........................updated
+  checkpoint_factor ............... 10000.......................updated
+  config_files .................... {'2-7B.yml': '# GPT-2 pretraining setup\n{\n   # parallelism settings ( you will want to change these based on your cluster setup, ideally scheduling pipeline stages\n   # across the node boundaries )\n   "pipe_parallel_size": 1,\n   "model_parallel_size": 1,\n   "attention_config": [\n   [\n      [\n        "ringX3"\n      ],\n      32\n   ]\n   ],\n   "zigzag-tokens": true,\n   "topology_order": [\n   "data",\n   "pipe",\n   "context",\n   "model"\n   ],\n   # model settings\n   "num_layers": 32,\n   "hidden_size": 2560,\n   "num_attention_heads": 32,\n   "norm": "layernorm",\n   "pos_emb": "rotary",\n   "no_weight_tying": true,\n   "gpt_j_residual": false,\n   "output_layer_parallelism": "column",\n\n   # these should provide some speedup but takes a while to build, set to true if desired\n   "scaled_upper_triang_masked_softmax_fusion": false,\n   "bias_gelu_fusion": false,\n   "rope_fusion": false,\n   "layernorm_fusion": false,\n\n   # init methods\n   "init_method": "small_init",\n   "output_layer_init_method": "wang_init",\n\n   # optimizer settings\n   "optimizer": {\n     "type": "Adam",\n     "params": {\n       "lr": 0.00016,\n       "betas": [0.9, 0.95],\n       "eps": 1.0e-8,\n     }\n   },\n   "min_lr": 0.000016,\n\n   # for all zero_optimization options, see https://www.deepspeed.ai/docs/config-json/#zero-optimizations-for-fp16-training\n   "zero_optimization": {\n    "stage": 1,\n    "allgather_partitions": True,\n    "allgather_bucket_size": 500000000,\n    "overlap_comm": True,\n    "reduce_scatter": True,\n    "reduce_bucket_size": 500000000,\n    "contiguous_gradients": True,\n   },\n\n   # batch / data settings\n   "train_micro_batch_size_per_gpu": 14,\n   "data_impl": "mmap",\n\n   # activation checkpointing\n   "checkpoint_activations": true,\n   "checkpoint_num_layers": 1,\n   "partition_activations": true,\n   "synchronize_each_layer": true,\n\n   # regularization\n   "gradient_clipping": 1.0,\n   "weight_decay": 0.1,\n   "hidden_dropout": 0,\n   "attention_dropout": 0,\n\n   # precision settings\n   "bf16": {\n     "enabled": true\n   },\n   # misc. training settings\n   "train_iters": 6,\n   "lr_decay_iters": 6,\n   "distributed_backend": "xccl",\n   "lr_decay_style": "cosine",\n   "warmup": 0.01,\n   "checkpoint_factor": 10000,\n   "eval_interval": 1000,\n   "eval_iters": 10,\n\n   # logging\n   "log_interval": 1,\n   "steps_per_print": 1,\n   "keep_last_n_checkpoints": 4,\n   "wall_clock_breakdown": true,\n}\n', 'cp2.yml': '{\n  "context_parallel_size": 2,\n}\n', '4096.yml': 'seq_length: 4096\nmax_position_embeddings: 4096\n', 'local_setup_wandb.yml': '# Suggested data paths when using GPT-NeoX locally\n{\n  "data_path": "data/enwik8/enwik8_text_document",\n\n  # or for weighted datasets:\n  # "train-data-paths": ["data/enwik8/enwik8_text_document", "data/enwik8/enwik8_text_document"],\n  # "test-data-paths": ["data/enwik8/enwik8_text_document", "data/enwik8/enwik8_text_document"],\n  # "valid-data-paths": ["data/enwik8/enwik8_text_document", "data/enwik8/enwik8_text_document"],\n  # "train-data-weights": [1., 2.],\n  # "test-data-weights": [2., 1.],\n  # "valid-data-weights": [0.5, 0.4],\n\n  # If weight_by_num_documents is True, Builds dataset weights from a multinomial distribution over groups of data according to the number of documents in each group.\n  # WARNING: setting this to True will override any user provided weights\n  # "weight_by_num_documents": false,\n  # "weighted_sampler_alpha": 0.3,\n\n  "vocab_file": "data/gpt2-vocab.json",\n  "merge_file": "data/gpt2-merges.txt",\n  "launcher": "mpich",\n  "deepspeed_mpi": true,\n\n  "save": "checkpoints",\n  "load": "checkpoints",\n  "checkpoint_validation_with_forward_pass": False,\n\n  "tensorboard_dir": "tensorboard",\n  "log_dir": "logs",\n  "use_wandb": True,\n  "wandb_host": "https://api.wandb.ai",\n}\n'}updated
+  context_parallel_size ........... 2...........................updated
+  data_impl ....................... mmap........................updated
+  data_path ....................... data/enwik8/enwik8_text_documentupdated
+  deepspeed_mpi ................... True........................updated
+  distributed_backend ............. xccl........................updated
+  dynamic_loss_scale .............. True........................updated
+  eval_iters ...................... 10..........................updated
+  global_num_gpus ................. 2...........................updated
+  hidden_size ..................... 2560........................updated
+  init_method ..................... small_init..................updated
+  is_pipe_parallel ................ True........................updated
+  keep_last_n_checkpoints ......... 4...........................updated
+  launcher ........................ mpich.......................updated
+  load ............................ checkpoints.................updated
+  log_dir ......................... logs........................updated
+  log_interval .................... 1...........................updated
+  lr .............................. 0.00016.....................updated
+  lr_decay_iters .................. 6...........................updated
+  lr_decay_style .................. cosine......................updated
+  max_position_embeddings ......... 4096........................updated
+  merge_file ...................... data/gpt2-merges.txt........updated
+  min_lr .......................... 1.6e-05.....................updated
+  no_weight_tying ................. True........................updated
+  num_attention_heads ............. 32..........................updated
+  num_layers ...................... 32..........................updated
+  optimizer ....................... {'type': 'Adam', 'params': {'lr': 0.00016, 'betas': [0.9, 0.95], 'eps': 1e-08}}updated
+  optimizer_type .................. Adam........................updated
+  output_layer_init_method ........ wang_init...................updated
+  partition_activations ........... True........................updated
+  pipe_parallel_size .............. 1...........................updated
+  pos_emb ......................... rotary......................updated
+  precision ....................... bfloat16....................updated
+  save ............................ checkpoints.................updated
+  seq_length ...................... 4096........................updated
+  sparsity_config ................. {}..........................updated
+  steps_per_print ................. 1...........................updated
+  synchronize_each_layer .......... True........................updated
+  tensorboard_dir ................. tensorboard.................updated
+  text_gen_type ................... unconditional...............updated
+  topology_order .................. ['data', 'pipe', 'context', 'model']updated
+  train_batch_size ................ 14..........................updated
+  train_iters ..................... 6...........................updated
+  train_micro_batch_size_per_gpu .. 14..........................updated
+  use_wandb ....................... True........................updated
+  user_script ..................... train.py....................updated
+  vocab_file ...................... data/gpt2-vocab.json........updated
+  wall_clock_breakdown ............ True........................updated
+  wandb_group ..................... qno3d7f9_i3jojlnu...........updated
+  zero_allgather_bucket_size ...... 500000000...................updated
+  zero_contiguous_gradients ....... True........................updated
+  zero_optimization ............... {'stage': 1, 'allgather_partitions': True, 'allgather_bucket_size': 500000000, 'overlap_comm': True, 'reduce_scatter': True, 'reduce_bucket_size': 500000000, 'contiguous_gradients': True}updated
+  zero_reduce_bucket_size ......... 500000000...................updated
+  zero_reduce_scatter ............. True........................updated
+  zero_stage ...................... 1...........................updated
+  zigzag_tokens ................... True........................updated
+  account ......................... None........................default
+  activation ...................... gelu........................default
+  activation_checkpointing ........ None........................default
+  adlr_autoresume ................. False.......................default
+  adlr_autoresume_interval ........ 1000........................default
+  allow_chopped ................... True........................default
+  amp ............................. None........................default
+  apply_query_key_layer_scaling ... False.......................default
+  attention_dropout ............... 0...........................default
+  attention_softmax_in_fp32 ....... False.......................default
+  autotuning ...................... None........................default
+  autotuning_run .................. None........................default
+  base_shapes_file ................ None........................default
+  bias_dropout_fusion ............. False.......................default
+  bias_gelu_fusion ................ False.......................default
+  char_level_ppl .................. False.......................default
+  checkpoint ...................... None........................default
+  checkpoint_in_cpu ............... False.......................default
+  checkpoint_num_layers ........... 1...........................default
+  checkpoint_scale ................ linear......................default
+  checkpoint_validation_with_forward_pass  False................default
+  clip_grad ....................... 1.0.........................default
+  comet_experiment ................ None........................default
+  comet_experiment_name ........... None........................default
+  comet_others .................... None........................default
+  comet_project ................... None........................default
+  comet_tags ...................... None........................default
+  comet_workspace ................. None........................default
+  comment ......................... None........................default
+  comms_logger .................... None........................default
+  communication_data_type ......... None........................default
+  compression_training ............ None........................default
+  contiguous_checkpointing ........ False.......................default
+  coord_check ..................... False.......................default
+  csv_monitor ..................... None........................default
+  curriculum_learning ............. None........................default
+  curriculum_seqlen ............... 0...........................default
+  data_efficiency ................. None........................default
+  data_types ...................... None........................default
+  dataset_impl .................... gpt2........................default
+  deepscale ....................... False.......................default
+  deepscale_config ................ None........................default
+  deepspeed ....................... True........................default
+  deepspeed_activation_checkpointing  True......................default
+  deepspeed_extra_args ............ None........................default
+  deepspeed_slurm ................. False.......................default
+  dim_att ......................... None........................default
+  do_test ......................... None........................default
+  do_train ........................ None........................default
+  do_valid ........................ None........................default
+  dpo_beta ........................ 0.1.........................default
+  dpo_fp32 ........................ True........................default
+  dpo_reference_free .............. False.......................default
+  dump_state ...................... False.......................default
+  elasticity ...................... None........................default
+  eod_mask_loss ................... False.......................default
+  eval_interval ................... 1000........................default
+  eval_results_prefix ............. ............................default
+  eval_tasks ...................... None........................default
+  exclude ......................... None........................default
+  exit_interval ................... None........................default
+  expansion_factor ................ None........................default
+  extra_save_iters ................ None........................default
+  ffn_dim ......................... None........................default
+  finetune ........................ False.......................default
+  flops_profiler .................. None........................default
+  force_multi ..................... False.......................default
+  fp16 ............................ None........................default
+  fp16_lm_cross_entropy ........... False.......................default
+  fp32_allreduce .................. False.......................default
+  fp32_reinforce .................. True........................default
+  fused_kernels_build_path ........ None........................default
+  git_hash ........................ 9d6403c.....................default
+  gmlp_attn_dim ................... 64..........................default
+  gpt_j_residual .................. False.......................default
+  gpt_j_tied ...................... False.......................default
+  gradient_accumulation_steps ..... 1...........................default
+  gradient_clipping ............... 1.0.........................default
+  gradient_noise_scale_cpu_offload  False.......................default
+  gradient_noise_scale_n_batches .. 5...........................default
+  gradient_predivide_factor ....... 1.0.........................default
+  head_size ....................... None........................default
+  hidden_dropout .................. 0...........................default
+  hostfile ........................ None........................default
+  hysteresis ...................... 2...........................default
+  include ......................... None........................default
+  init_method_std ................. 0.02........................default
+  intermediate_size ............... None........................default
+  iteration ....................... None........................default
+  kl_div_beta ..................... 0.1.........................default
+  kl_impl ......................... mse.........................default
+  kto_beta ........................ 0.1.........................default
+  kto_desirable_weight ............ 1.0.........................default
+  kto_fp32 ........................ True........................default
+  kto_undesirable_weight .......... 1.0.........................default
+  layernorm_epsilon ............... 1e-05.......................default
+  layernorm_fusion ................ False.......................default
+  lazy_mpu_init ................... False.......................default
+  local_rank ...................... None........................default
+  log_grad_norm ................... False.......................default
+  log_grad_pct_zeros .............. False.......................default
+  log_gradient_noise_scale ........ False.......................default
+  log_optimizer_states ............ False.......................default
+  log_param_norm .................. False.......................default
+  loss_scale ...................... None........................default
+  loss_scale_window ............... 1000.0......................default
+  lr_decay_fraction ............... None........................default
+  make_vocab_size_divisible_by .... 128.........................default
+  mamba_causal_conv_fusion ........ False.......................default
+  mamba_inner_func_fusion ......... False.......................default
+  mamba_selective_fp32_params ..... True........................default
+  mamba_selective_scan_fusion ..... False.......................default
+  mamba_use_bias_in_conv .......... True........................default
+  mamba_use_bias_in_linears ....... False.......................default
+  master_addr ..................... None........................default
+  master_port ..................... 29500.......................default
+  maximum_tokens .................. 64..........................default
+  memory_profiling ................ False.......................default
+  memory_profiling_path ........... None........................default
+  min_scale ....................... 1.0.........................default
+  mlp_multiple_of ................. 1...........................default
+  mmap_warmup ..................... False.......................default
+  model_parallel_size ............. 1...........................default
+  moe_expert_interval ............. 1...........................default
+  moe_jitter_eps .................. None........................default
+  moe_lbl_in_fp32 ................. False.......................default
+  moe_num_experts ................. 1...........................default
+  moe_router_type ................. sinkhorn....................default
+  moe_top_k ....................... 1...........................default
+  mup_attn_temp ................... 1.0.........................default
+  mup_embedding_mult .............. 1.0.........................default
+  mup_init_scale .................. 1.0.........................default
+  mup_output_temp ................. 1.0.........................default
+  mup_rp_embedding_mult ........... 1.0.........................default
+  mup_width_scale ................. 2...........................default
+  neg_test_data_paths ............. None........................default
+  neg_test_label_data_paths ....... None........................default
+  neg_train_data_paths ............ None........................default
+  neg_train_label_data_paths ...... None........................default
+  neg_valid_data_paths ............ None........................default
+  neg_valid_label_data_paths ...... None........................default
+  no_load_optim ................... False.......................default
+  no_load_rng ..................... False.......................default
+  no_save_optim ................... False.......................default
+  no_save_rng ..................... False.......................default
+  no_ssh_check .................... False.......................default
+  norm ............................ layernorm...................default
+  num_gpus ........................ None........................default
+  num_kv_heads .................... None........................default
+  num_nodes ....................... -1..........................default
+  num_samples ..................... 1...........................default
+  num_unique_layers ............... None........................default
+  num_workers ..................... 2...........................default
+  online_dataserver_ips ........... localhost...................default
+  online_dataserver_ports ......... 10000.......................default
+  onnx_safe ....................... False.......................default
+  opt_pos_emb_offset .............. 0...........................default
+  output_layer_parallelism ........ column......................default
+  override_lr_scheduler ........... False.......................default
+  pack_impl ....................... packed......................default
+  padded_vocab_size ............... None........................default
+  param_sharing_style ............. grouped.....................default
+  peak_theoretical_tflops ......... None........................default
+  pipe_partition_method ........... type:transformer|mlp........default
+  pos_test_data_paths ............. None........................default
+  pos_test_label_data_paths ....... None........................default
+  pos_train_data_paths ............ None........................default
+  pos_train_label_data_paths ...... None........................default
+  pos_valid_data_paths ............ None........................default
+  pos_valid_label_data_paths ...... None........................default
+  precompute_model_name ........... None........................default
+  prescale_gradients .............. False.......................default
+  profile ......................... False.......................default
+  profile_backward ................ False.......................default
+  profile_step_start .............. 10..........................default
+  profile_step_stop ............... 12..........................default
+  prompt_end ...................... 
+...........................default
+  rank ............................ None........................default
+  recompute ....................... False.......................default
+  reinforce_leave_one_out ......... False.......................default
+  return_logits ................... False.......................default
+  rms_norm_epsilon ................ 1e-08.......................default
+  rmsnorm_fusion .................. False.......................default
+  rope_fusion ..................... False.......................default
+  rotary_emb_base ................. 10000.......................default
+  rotary_pct ...................... 1.0.........................default
+  rotary_save_freqs_buffer ........ False.......................default
+  rpe_max_distance ................ 128.........................default
+  rpe_num_buckets ................. 32..........................default
+  s3_chunk_size ................... 104857600...................default
+  s3_path ......................... None........................default
+  sample_input_file ............... None........................default
+  sample_output_file .............. samples.txt.................default
+  save_base_shapes ................ False.......................default
+  scaled_masked_softmax_fusion .... False.......................default
+  scaled_upper_triang_masked_softmax_fusion  False..............default
+  scalenorm_epsilon ............... 1e-08.......................default
+  scheduler ....................... None........................default
+  seed ............................ 1234........................default
+  sequence_parallel ............... False.......................default
+  serve_model_weights ............. False.......................default
+  short_seq_prob .................. 0.1.........................default
+  sliding_window_width ............ None........................default
+  soft_prompt_tuning .............. None........................default
+  sparse_attention ................ None........................default
+  sparse_gradients ................ False.......................default
+  split ........................... 969, 30, 1..................default
+  te_columnparallel ............... False.......................default
+  te_fp8_amax_compute_algo ........ most_recent.................default
+  te_fp8_amax_history_len ......... 1...........................default
+  te_fp8_format ................... hybrid......................default
+  te_fp8_margin ................... 0...........................default
+  te_fp8_mha ...................... False.......................default
+  te_fp8_wgrad .................... True........................default
+  te_layernorm_mlp ................ False.......................default
+  te_mha .......................... False.......................default
+  te_rowparallel .................. False.......................default
+  temperature ..................... 0.0.........................default
+  tensorboard ..................... None........................default
+  test_data_paths ................. None........................default
+  test_data_weights ............... None........................default
+  test_label_data_paths ........... None........................default
+  test_reward_data_paths .......... None........................default
+  tokenizer_type .................. GPT2BPETokenizer............default
+  top_k ........................... 0...........................default
+  top_p ........................... 0.0.........................default
+  train_data_paths ................ None........................default
+  train_data_weights .............. None........................default
+  train_epochs .................... None........................default
+  train_impl ...................... normal......................default
+  train_label_data_paths .......... None........................default
+  train_reward_data_paths ......... None........................default
+  use_bias_in_attn_linear ......... True........................default
+  use_bias_in_mlp ................. True........................default
+  use_bias_in_norms ............... True........................default
+  use_bnb_optimizer ............... False.......................default
+  use_checkpoint_lr_scheduler ..... False.......................default
+  use_comet ....................... None........................default
+  use_cpu_initialization .......... False.......................default
+  use_flashattn_swiglu ............ False.......................default
+  use_mup ......................... False.......................default
+  use_qk_layernorm ................ False.......................default
+  use_shared_fs ................... True........................default
+  valid_data_paths ................ None........................default
+  valid_data_weights .............. None........................default
+  valid_label_data_paths .......... None........................default
+  valid_reward_data_paths ......... None........................default
+  wandb ........................... None........................default
+  wandb_host ...................... https://api.wandb.ai........default
+  wandb_init_all_ranks ............ False.......................default
+  wandb_project ................... neox........................default
+  wandb_run_name .................. None........................default
+  wandb_team ...................... None........................default
+  warmup .......................... 0.01........................default
+  weight_by_num_documents ......... False.......................default
+  weight_decay .................... 0.1.........................default
+  weight_server_port .............. 6000........................default
+  weighted_sampler_alpha .......... 1.0.........................default
+  world_size ...................... None........................default
+  z_loss .......................... 0.0.........................default
+---------------- end of arguments ----------------
+NeoXArgs.configure_distributed_args() using world size: 1 and model-parallel size: 1 
+['--launcher', 'mpich', '--force_multi', '--hostfile', '/lus/flare/projects/FoundMedicine/jahatef/hostfiles/hosts_8980532', '--master_addr', 'x4601c7s2b0n0.hsn.cm.aurora.alcf.anl.gov', 'train.py', '--deepspeed_config', 'eyJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlfQ==', '--megatron_config', 'eyJsYXVuY2hlciI6ICJtcGljaCIsICJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlLCAicHJlY2lzaW9uIjogImJmbG9hdDE2IiwgIm51bV9sYXllcnMiOiAzMiwgImhpZGRlbl9zaXplIjogMjU2MCwgIm51bV9hdHRlbnRpb25faGVhZHMiOiAzMiwgInNlcV9sZW5ndGgiOiA0MDk2LCAibWF4X3Bvc2l0aW9uX2VtYmVkZGluZ3MiOiA0MDk2LCAicG9zX2VtYiI6ICJyb3RhcnkiLCAibm9fd2VpZ2h0X3R5aW5nIjogdHJ1ZSwgImF0dGVudGlvbl9jb25maWciOiBbInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiXSwgInNwYXJzaXR5X2NvbmZpZyI6IHt9LCAiaW5pdF9tZXRob2QiOiAic21hbGxfaW5pdCIsICJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2QiOiAid2FuZ19pbml0IiwgImxyX2RlY2F5X3N0eWxlIjogImNvc2luZSIsICJscl9kZWNheV9pdGVycyI6IDYsICJtaW5fbHIiOiAxLjZlLTA1LCAib3B0aW1pemVyX3R5cGUiOiAiQWRhbSIsICJ6ZXJvX3N0YWdlIjogMSwgInplcm9fcmVkdWNlX3NjYXR0ZXIiOiB0cnVlLCAiemVyb19jb250aWd1b3VzX2dyYWRpZW50cyI6IHRydWUsICJ6ZXJvX3JlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgInplcm9fYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAibHIiOiAwLjAwMDE2LCAiZGF0YV9wYXRoIjogImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50IiwgImRhdGFfaW1wbCI6ICJtbWFwIiwgInNhdmUiOiAiY2hlY2twb2ludHMiLCAiY29uZmlnX2ZpbGVzIjogeyIyLTdCLnltbCI6ICIjIEdQVC0yIHByZXRyYWluaW5nIHNldHVwXG57XG4gICAjIHBhcmFsbGVsaXNtIHNldHRpbmdzICggeW91IHdpbGwgd2FudCB0byBjaGFuZ2UgdGhlc2UgYmFzZWQgb24geW91ciBjbHVzdGVyIHNldHVwLCBpZGVhbGx5IHNjaGVkdWxpbmcgcGlwZWxpbmUgc3RhZ2VzXG4gICAjIGFjcm9zcyB0aGUgbm9kZSBib3VuZGFyaWVzIClcbiAgIFwicGlwZV9wYXJhbGxlbF9zaXplXCI6IDEsXG4gICBcIm1vZGVsX3BhcmFsbGVsX3NpemVcIjogMSxcbiAgIFwiYXR0ZW50aW9uX2NvbmZpZ1wiOiBbXG4gICBbXG4gICAgICBbXG4gICAgICAgIFwicmluZ1gzXCJcbiAgICAgIF0sXG4gICAgICAzMlxuICAgXVxuICAgXSxcbiAgIFwiemlnemFnLXRva2Vuc1wiOiB0cnVlLFxuICAgXCJ0b3BvbG9neV9vcmRlclwiOiBbXG4gICBcImRhdGFcIixcbiAgIFwicGlwZVwiLFxuICAgXCJjb250ZXh0XCIsXG4gICBcIm1vZGVsXCJcbiAgIF0sXG4gICAjIG1vZGVsIHNldHRpbmdzXG4gICBcIm51bV9sYXllcnNcIjogMzIsXG4gICBcImhpZGRlbl9zaXplXCI6IDI1NjAsXG4gICBcIm51bV9hdHRlbnRpb25faGVhZHNcIjogMzIsXG4gICBcIm5vcm1cIjogXCJsYXllcm5vcm1cIixcbiAgIFwicG9zX2VtYlwiOiBcInJvdGFyeVwiLFxuICAgXCJub193ZWlnaHRfdHlpbmdcIjogdHJ1ZSxcbiAgIFwiZ3B0X2pfcmVzaWR1YWxcIjogZmFsc2UsXG4gICBcIm91dHB1dF9sYXllcl9wYXJhbGxlbGlzbVwiOiBcImNvbHVtblwiLFxuXG4gICAjIHRoZXNlIHNob3VsZCBwcm92aWRlIHNvbWUgc3BlZWR1cCBidXQgdGFrZXMgYSB3aGlsZSB0byBidWlsZCwgc2V0IHRvIHRydWUgaWYgZGVzaXJlZFxuICAgXCJzY2FsZWRfdXBwZXJfdHJpYW5nX21hc2tlZF9zb2Z0bWF4X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwiYmlhc19nZWx1X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwicm9wZV9mdXNpb25cIjogZmFsc2UsXG4gICBcImxheWVybm9ybV9mdXNpb25cIjogZmFsc2UsXG5cbiAgICMgaW5pdCBtZXRob2RzXG4gICBcImluaXRfbWV0aG9kXCI6IFwic21hbGxfaW5pdFwiLFxuICAgXCJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2RcIjogXCJ3YW5nX2luaXRcIixcblxuICAgIyBvcHRpbWl6ZXIgc2V0dGluZ3NcbiAgIFwib3B0aW1pemVyXCI6IHtcbiAgICAgXCJ0eXBlXCI6IFwiQWRhbVwiLFxuICAgICBcInBhcmFtc1wiOiB7XG4gICAgICAgXCJsclwiOiAwLjAwMDE2LFxuICAgICAgIFwiYmV0YXNcIjogWzAuOSwgMC45NV0sXG4gICAgICAgXCJlcHNcIjogMS4wZS04LFxuICAgICB9XG4gICB9LFxuICAgXCJtaW5fbHJcIjogMC4wMDAwMTYsXG5cbiAgICMgZm9yIGFsbCB6ZXJvX29wdGltaXphdGlvbiBvcHRpb25zLCBzZWUgaHR0cHM6Ly93d3cuZGVlcHNwZWVkLmFpL2RvY3MvY29uZmlnLWpzb24vI3plcm8tb3B0aW1pemF0aW9ucy1mb3ItZnAxNi10cmFpbmluZ1xuICAgXCJ6ZXJvX29wdGltaXphdGlvblwiOiB7XG4gICAgXCJzdGFnZVwiOiAxLFxuICAgIFwiYWxsZ2F0aGVyX3BhcnRpdGlvbnNcIjogVHJ1ZSxcbiAgICBcImFsbGdhdGhlcl9idWNrZXRfc2l6ZVwiOiA1MDAwMDAwMDAsXG4gICAgXCJvdmVybGFwX2NvbW1cIjogVHJ1ZSxcbiAgICBcInJlZHVjZV9zY2F0dGVyXCI6IFRydWUsXG4gICAgXCJyZWR1Y2VfYnVja2V0X3NpemVcIjogNTAwMDAwMDAwLFxuICAgIFwiY29udGlndW91c19ncmFkaWVudHNcIjogVHJ1ZSxcbiAgIH0sXG5cbiAgICMgYmF0Y2ggLyBkYXRhIHNldHRpbmdzXG4gICBcInRyYWluX21pY3JvX2JhdGNoX3NpemVfcGVyX2dwdVwiOiAxNCxcbiAgIFwiZGF0YV9pbXBsXCI6IFwibW1hcFwiLFxuXG4gICAjIGFjdGl2YXRpb24gY2hlY2twb2ludGluZ1xuICAgXCJjaGVja3BvaW50X2FjdGl2YXRpb25zXCI6IHRydWUsXG4gICBcImNoZWNrcG9pbnRfbnVtX2xheWVyc1wiOiAxLFxuICAgXCJwYXJ0aXRpb25fYWN0aXZhdGlvbnNcIjogdHJ1ZSxcbiAgIFwic3luY2hyb25pemVfZWFjaF9sYXllclwiOiB0cnVlLFxuXG4gICAjIHJlZ3VsYXJpemF0aW9uXG4gICBcImdyYWRpZW50X2NsaXBwaW5nXCI6IDEuMCxcbiAgIFwid2VpZ2h0X2RlY2F5XCI6IDAuMSxcbiAgIFwiaGlkZGVuX2Ryb3BvdXRcIjogMCxcbiAgIFwiYXR0ZW50aW9uX2Ryb3BvdXRcIjogMCxcblxuICAgIyBwcmVjaXNpb24gc2V0dGluZ3NcbiAgIFwiYmYxNlwiOiB7XG4gICAgIFwiZW5hYmxlZFwiOiB0cnVlXG4gICB9LFxuICAgIyBtaXNjLiB0cmFpbmluZyBzZXR0aW5nc1xuICAgXCJ0cmFpbl9pdGVyc1wiOiA2LFxuICAgXCJscl9kZWNheV9pdGVyc1wiOiA2LFxuICAgXCJkaXN0cmlidXRlZF9iYWNrZW5kXCI6IFwieGNjbFwiLFxuICAgXCJscl9kZWNheV9zdHlsZVwiOiBcImNvc2luZVwiLFxuICAgXCJ3YXJtdXBcIjogMC4wMSxcbiAgIFwiY2hlY2twb2ludF9mYWN0b3JcIjogMTAwMDAsXG4gICBcImV2YWxfaW50ZXJ2YWxcIjogMTAwMCxcbiAgIFwiZXZhbF9pdGVyc1wiOiAxMCxcblxuICAgIyBsb2dnaW5nXG4gICBcImxvZ19pbnRlcnZhbFwiOiAxLFxuICAgXCJzdGVwc19wZXJfcHJpbnRcIjogMSxcbiAgIFwia2VlcF9sYXN0X25fY2hlY2twb2ludHNcIjogNCxcbiAgIFwid2FsbF9jbG9ja19icmVha2Rvd25cIjogdHJ1ZSxcbn1cbiIsICJjcDIueW1sIjogIntcbiAgXCJjb250ZXh0X3BhcmFsbGVsX3NpemVcIjogMixcbn1cbiIsICI0MDk2LnltbCI6ICJzZXFfbGVuZ3RoOiA0MDk2XG5tYXhfcG9zaXRpb25fZW1iZWRkaW5nczogNDA5NlxuIiwgImxvY2FsX3NldHVwX3dhbmRiLnltbCI6ICIjIFN1Z2dlc3RlZCBkYXRhIHBhdGhzIHdoZW4gdXNpbmcgR1BULU5lb1ggbG9jYWxseVxue1xuICBcImRhdGFfcGF0aFwiOiBcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsXG5cbiAgIyBvciBmb3Igd2VpZ2h0ZWQgZGF0YXNldHM6XG4gICMgXCJ0cmFpbi1kYXRhLXBhdGhzXCI6IFtcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsIFwiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIl0sXG4gICMgXCJ0ZXN0LWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInZhbGlkLWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInRyYWluLWRhdGEtd2VpZ2h0c1wiOiBbMS4sIDIuXSxcbiAgIyBcInRlc3QtZGF0YS13ZWlnaHRzXCI6IFsyLiwgMS5dLFxuICAjIFwidmFsaWQtZGF0YS13ZWlnaHRzXCI6IFswLjUsIDAuNF0sXG5cbiAgIyBJZiB3ZWlnaHRfYnlfbnVtX2RvY3VtZW50cyBpcyBUcnVlLCBCdWlsZHMgZGF0YXNldCB3ZWlnaHRzIGZyb20gYSBtdWx0aW5vbWlhbCBkaXN0cmlidXRpb24gb3ZlciBncm91cHMgb2YgZGF0YSBhY2NvcmRpbmcgdG8gdGhlIG51bWJlciBvZiBkb2N1bWVudHMgaW4gZWFjaCBncm91cC5cbiAgIyBXQVJOSU5HOiBzZXR0aW5nIHRoaXMgdG8gVHJ1ZSB3aWxsIG92ZXJyaWRlIGFueSB1c2VyIHByb3ZpZGVkIHdlaWdodHNcbiAgIyBcIndlaWdodF9ieV9udW1fZG9jdW1lbnRzXCI6IGZhbHNlLFxuICAjIFwid2VpZ2h0ZWRfc2FtcGxlcl9hbHBoYVwiOiAwLjMsXG5cbiAgXCJ2b2NhYl9maWxlXCI6IFwiZGF0YS9ncHQyLXZvY2FiLmpzb25cIixcbiAgXCJtZXJnZV9maWxlXCI6IFwiZGF0YS9ncHQyLW1lcmdlcy50eHRcIixcbiAgXCJsYXVuY2hlclwiOiBcIm1waWNoXCIsXG4gIFwiZGVlcHNwZWVkX21waVwiOiB0cnVlLFxuXG4gIFwic2F2ZVwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwibG9hZFwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwiY2hlY2twb2ludF92YWxpZGF0aW9uX3dpdGhfZm9yd2FyZF9wYXNzXCI6IEZhbHNlLFxuXG4gIFwidGVuc29yYm9hcmRfZGlyXCI6IFwidGVuc29yYm9hcmRcIixcbiAgXCJsb2dfZGlyXCI6IFwibG9nc1wiLFxuICBcInVzZV93YW5kYlwiOiBUcnVlLFxuICBcIndhbmRiX2hvc3RcIjogXCJodHRwczovL2FwaS53YW5kYi5haVwiLFxufVxuIn0sICJsb2FkIjogImNoZWNrcG9pbnRzIiwgImNoZWNrcG9pbnRfZmFjdG9yIjogMTAwMDAsICJiYXRjaF9zaXplIjogMTQsICJ0cmFpbl9pdGVycyI6IDYsICJldmFsX2l0ZXJzIjogMTAsICJrZWVwX2xhc3Rfbl9jaGVja3BvaW50cyI6IDQsICJ2b2NhYl9maWxlIjogImRhdGEvZ3B0Mi12b2NhYi5qc29uIiwgIm1lcmdlX2ZpbGUiOiAiZGF0YS9ncHQyLW1lcmdlcy50eHQiLCAiY2hlY2twb2ludF9hY3RpdmF0aW9ucyI6IHRydWUsICJzeW5jaHJvbml6ZV9lYWNoX2xheWVyIjogdHJ1ZSwgInBhcnRpdGlvbl9hY3RpdmF0aW9ucyI6IHRydWUsICJkeW5hbWljX2xvc3Nfc2NhbGUiOiB0cnVlLCAicGlwZV9wYXJhbGxlbF9zaXplIjogMSwgImNvbnRleHRfcGFyYWxsZWxfc2l6ZSI6IDIsICJ6aWd6YWdfdG9rZW5zIjogdHJ1ZSwgInRvcG9sb2d5X29yZGVyIjogWyJkYXRhIiwgInBpcGUiLCAiY29udGV4dCIsICJtb2RlbCJdLCAid29ybGRfc2l6ZSI6IDEsICJpc19waXBlX3BhcmFsbGVsIjogdHJ1ZSwgInVzZV93YW5kYiI6IHRydWUsICJ3YW5kYl9ncm91cCI6ICJxbm8zZDdmOV9pM2pvamxudSIsICJsb2dfZGlyIjogImxvZ3MiLCAidGVuc29yYm9hcmRfZGlyIjogInRlbnNvcmJvYXJkIiwgImxvZ19pbnRlcnZhbCI6IDEsICJ0ZXh0X2dlbl90eXBlIjogInVuY29uZGl0aW9uYWwiLCAiZGlzdHJpYnV0ZWRfYmFja2VuZCI6ICJ4Y2NsIiwgImxvY2FsX3JhbmsiOiAwLCAicmFuayI6IDAsICJkZWVwc3BlZWRfbXBpIjogdHJ1ZSwgInVzZXJfc2NyaXB0IjogInRyYWluLnB5IiwgImdsb2JhbF9udW1fZ3B1cyI6IDJ9']
+
+MPIRUN (MPICH) COMMAND: ['mpirun', '-n', '2', '-ppn', '2', '-genv', 'PYTHONPATH=/lus/flare/projects/FoundMedicine/jahatef/gpt-neox:/lus/flare/projects/FoundMedicine/jahatef/DeepSpeed:/opt/aurora/26.26.0/oneapi/advisor/latest/pythonapi:/lus/flare/projects/FoundMedicine/jahatef/gpt-neox', '-genv', 'PYTHONUSERBASE=/home/jahatef/.local/aurora/frameworks/2025.3.1', '-genv', 'WANDB_API_KEY=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', '-genv', 'MASTER_ADDR', 'x4601c7s2b0n0.hsn.cm.aurora.alcf.anl.gov', '-genv', 'MASTER_PORT', '29500', '-genv', 'WORLD_SIZE', '2', '-genv', 'LOCAL_SIZE', '2', '-hosts', 'x4601c7s2b0n0.hsn.cm.aurora.alcf.anl.gov', '/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python', '-u', '/lus/flare/projects/FoundMedicine/jahatef/DeepSpeed/deepspeed/launcher/launcher_helper.py', '--launcher', 'mpich', 'train.py', '--deepspeed_config', 'eyJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlfQ==', '--megatron_config', 'eyJsYXVuY2hlciI6ICJtcGljaCIsICJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlLCAicHJlY2lzaW9uIjogImJmbG9hdDE2IiwgIm51bV9sYXllcnMiOiAzMiwgImhpZGRlbl9zaXplIjogMjU2MCwgIm51bV9hdHRlbnRpb25faGVhZHMiOiAzMiwgInNlcV9sZW5ndGgiOiA0MDk2LCAibWF4X3Bvc2l0aW9uX2VtYmVkZGluZ3MiOiA0MDk2LCAicG9zX2VtYiI6ICJyb3RhcnkiLCAibm9fd2VpZ2h0X3R5aW5nIjogdHJ1ZSwgImF0dGVudGlvbl9jb25maWciOiBbInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiXSwgInNwYXJzaXR5X2NvbmZpZyI6IHt9LCAiaW5pdF9tZXRob2QiOiAic21hbGxfaW5pdCIsICJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2QiOiAid2FuZ19pbml0IiwgImxyX2RlY2F5X3N0eWxlIjogImNvc2luZSIsICJscl9kZWNheV9pdGVycyI6IDYsICJtaW5fbHIiOiAxLjZlLTA1LCAib3B0aW1pemVyX3R5cGUiOiAiQWRhbSIsICJ6ZXJvX3N0YWdlIjogMSwgInplcm9fcmVkdWNlX3NjYXR0ZXIiOiB0cnVlLCAiemVyb19jb250aWd1b3VzX2dyYWRpZW50cyI6IHRydWUsICJ6ZXJvX3JlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgInplcm9fYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAibHIiOiAwLjAwMDE2LCAiZGF0YV9wYXRoIjogImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50IiwgImRhdGFfaW1wbCI6ICJtbWFwIiwgInNhdmUiOiAiY2hlY2twb2ludHMiLCAiY29uZmlnX2ZpbGVzIjogeyIyLTdCLnltbCI6ICIjIEdQVC0yIHByZXRyYWluaW5nIHNldHVwXG57XG4gICAjIHBhcmFsbGVsaXNtIHNldHRpbmdzICggeW91IHdpbGwgd2FudCB0byBjaGFuZ2UgdGhlc2UgYmFzZWQgb24geW91ciBjbHVzdGVyIHNldHVwLCBpZGVhbGx5IHNjaGVkdWxpbmcgcGlwZWxpbmUgc3RhZ2VzXG4gICAjIGFjcm9zcyB0aGUgbm9kZSBib3VuZGFyaWVzIClcbiAgIFwicGlwZV9wYXJhbGxlbF9zaXplXCI6IDEsXG4gICBcIm1vZGVsX3BhcmFsbGVsX3NpemVcIjogMSxcbiAgIFwiYXR0ZW50aW9uX2NvbmZpZ1wiOiBbXG4gICBbXG4gICAgICBbXG4gICAgICAgIFwicmluZ1gzXCJcbiAgICAgIF0sXG4gICAgICAzMlxuICAgXVxuICAgXSxcbiAgIFwiemlnemFnLXRva2Vuc1wiOiB0cnVlLFxuICAgXCJ0b3BvbG9neV9vcmRlclwiOiBbXG4gICBcImRhdGFcIixcbiAgIFwicGlwZVwiLFxuICAgXCJjb250ZXh0XCIsXG4gICBcIm1vZGVsXCJcbiAgIF0sXG4gICAjIG1vZGVsIHNldHRpbmdzXG4gICBcIm51bV9sYXllcnNcIjogMzIsXG4gICBcImhpZGRlbl9zaXplXCI6IDI1NjAsXG4gICBcIm51bV9hdHRlbnRpb25faGVhZHNcIjogMzIsXG4gICBcIm5vcm1cIjogXCJsYXllcm5vcm1cIixcbiAgIFwicG9zX2VtYlwiOiBcInJvdGFyeVwiLFxuICAgXCJub193ZWlnaHRfdHlpbmdcIjogdHJ1ZSxcbiAgIFwiZ3B0X2pfcmVzaWR1YWxcIjogZmFsc2UsXG4gICBcIm91dHB1dF9sYXllcl9wYXJhbGxlbGlzbVwiOiBcImNvbHVtblwiLFxuXG4gICAjIHRoZXNlIHNob3VsZCBwcm92aWRlIHNvbWUgc3BlZWR1cCBidXQgdGFrZXMgYSB3aGlsZSB0byBidWlsZCwgc2V0IHRvIHRydWUgaWYgZGVzaXJlZFxuICAgXCJzY2FsZWRfdXBwZXJfdHJpYW5nX21hc2tlZF9zb2Z0bWF4X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwiYmlhc19nZWx1X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwicm9wZV9mdXNpb25cIjogZmFsc2UsXG4gICBcImxheWVybm9ybV9mdXNpb25cIjogZmFsc2UsXG5cbiAgICMgaW5pdCBtZXRob2RzXG4gICBcImluaXRfbWV0aG9kXCI6IFwic21hbGxfaW5pdFwiLFxuICAgXCJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2RcIjogXCJ3YW5nX2luaXRcIixcblxuICAgIyBvcHRpbWl6ZXIgc2V0dGluZ3NcbiAgIFwib3B0aW1pemVyXCI6IHtcbiAgICAgXCJ0eXBlXCI6IFwiQWRhbVwiLFxuICAgICBcInBhcmFtc1wiOiB7XG4gICAgICAgXCJsclwiOiAwLjAwMDE2LFxuICAgICAgIFwiYmV0YXNcIjogWzAuOSwgMC45NV0sXG4gICAgICAgXCJlcHNcIjogMS4wZS04LFxuICAgICB9XG4gICB9LFxuICAgXCJtaW5fbHJcIjogMC4wMDAwMTYsXG5cbiAgICMgZm9yIGFsbCB6ZXJvX29wdGltaXphdGlvbiBvcHRpb25zLCBzZWUgaHR0cHM6Ly93d3cuZGVlcHNwZWVkLmFpL2RvY3MvY29uZmlnLWpzb24vI3plcm8tb3B0aW1pemF0aW9ucy1mb3ItZnAxNi10cmFpbmluZ1xuICAgXCJ6ZXJvX29wdGltaXphdGlvblwiOiB7XG4gICAgXCJzdGFnZVwiOiAxLFxuICAgIFwiYWxsZ2F0aGVyX3BhcnRpdGlvbnNcIjogVHJ1ZSxcbiAgICBcImFsbGdhdGhlcl9idWNrZXRfc2l6ZVwiOiA1MDAwMDAwMDAsXG4gICAgXCJvdmVybGFwX2NvbW1cIjogVHJ1ZSxcbiAgICBcInJlZHVjZV9zY2F0dGVyXCI6IFRydWUsXG4gICAgXCJyZWR1Y2VfYnVja2V0X3NpemVcIjogNTAwMDAwMDAwLFxuICAgIFwiY29udGlndW91c19ncmFkaWVudHNcIjogVHJ1ZSxcbiAgIH0sXG5cbiAgICMgYmF0Y2ggLyBkYXRhIHNldHRpbmdzXG4gICBcInRyYWluX21pY3JvX2JhdGNoX3NpemVfcGVyX2dwdVwiOiAxNCxcbiAgIFwiZGF0YV9pbXBsXCI6IFwibW1hcFwiLFxuXG4gICAjIGFjdGl2YXRpb24gY2hlY2twb2ludGluZ1xuICAgXCJjaGVja3BvaW50X2FjdGl2YXRpb25zXCI6IHRydWUsXG4gICBcImNoZWNrcG9pbnRfbnVtX2xheWVyc1wiOiAxLFxuICAgXCJwYXJ0aXRpb25fYWN0aXZhdGlvbnNcIjogdHJ1ZSxcbiAgIFwic3luY2hyb25pemVfZWFjaF9sYXllclwiOiB0cnVlLFxuXG4gICAjIHJlZ3VsYXJpemF0aW9uXG4gICBcImdyYWRpZW50X2NsaXBwaW5nXCI6IDEuMCxcbiAgIFwid2VpZ2h0X2RlY2F5XCI6IDAuMSxcbiAgIFwiaGlkZGVuX2Ryb3BvdXRcIjogMCxcbiAgIFwiYXR0ZW50aW9uX2Ryb3BvdXRcIjogMCxcblxuICAgIyBwcmVjaXNpb24gc2V0dGluZ3NcbiAgIFwiYmYxNlwiOiB7XG4gICAgIFwiZW5hYmxlZFwiOiB0cnVlXG4gICB9LFxuICAgIyBtaXNjLiB0cmFpbmluZyBzZXR0aW5nc1xuICAgXCJ0cmFpbl9pdGVyc1wiOiA2LFxuICAgXCJscl9kZWNheV9pdGVyc1wiOiA2LFxuICAgXCJkaXN0cmlidXRlZF9iYWNrZW5kXCI6IFwieGNjbFwiLFxuICAgXCJscl9kZWNheV9zdHlsZVwiOiBcImNvc2luZVwiLFxuICAgXCJ3YXJtdXBcIjogMC4wMSxcbiAgIFwiY2hlY2twb2ludF9mYWN0b3JcIjogMTAwMDAsXG4gICBcImV2YWxfaW50ZXJ2YWxcIjogMTAwMCxcbiAgIFwiZXZhbF9pdGVyc1wiOiAxMCxcblxuICAgIyBsb2dnaW5nXG4gICBcImxvZ19pbnRlcnZhbFwiOiAxLFxuICAgXCJzdGVwc19wZXJfcHJpbnRcIjogMSxcbiAgIFwia2VlcF9sYXN0X25fY2hlY2twb2ludHNcIjogNCxcbiAgIFwid2FsbF9jbG9ja19icmVha2Rvd25cIjogdHJ1ZSxcbn1cbiIsICJjcDIueW1sIjogIntcbiAgXCJjb250ZXh0X3BhcmFsbGVsX3NpemVcIjogMixcbn1cbiIsICI0MDk2LnltbCI6ICJzZXFfbGVuZ3RoOiA0MDk2XG5tYXhfcG9zaXRpb25fZW1iZWRkaW5nczogNDA5NlxuIiwgImxvY2FsX3NldHVwX3dhbmRiLnltbCI6ICIjIFN1Z2dlc3RlZCBkYXRhIHBhdGhzIHdoZW4gdXNpbmcgR1BULU5lb1ggbG9jYWxseVxue1xuICBcImRhdGFfcGF0aFwiOiBcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsXG5cbiAgIyBvciBmb3Igd2VpZ2h0ZWQgZGF0YXNldHM6XG4gICMgXCJ0cmFpbi1kYXRhLXBhdGhzXCI6IFtcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsIFwiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIl0sXG4gICMgXCJ0ZXN0LWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInZhbGlkLWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInRyYWluLWRhdGEtd2VpZ2h0c1wiOiBbMS4sIDIuXSxcbiAgIyBcInRlc3QtZGF0YS13ZWlnaHRzXCI6IFsyLiwgMS5dLFxuICAjIFwidmFsaWQtZGF0YS13ZWlnaHRzXCI6IFswLjUsIDAuNF0sXG5cbiAgIyBJZiB3ZWlnaHRfYnlfbnVtX2RvY3VtZW50cyBpcyBUcnVlLCBCdWlsZHMgZGF0YXNldCB3ZWlnaHRzIGZyb20gYSBtdWx0aW5vbWlhbCBkaXN0cmlidXRpb24gb3ZlciBncm91cHMgb2YgZGF0YSBhY2NvcmRpbmcgdG8gdGhlIG51bWJlciBvZiBkb2N1bWVudHMgaW4gZWFjaCBncm91cC5cbiAgIyBXQVJOSU5HOiBzZXR0aW5nIHRoaXMgdG8gVHJ1ZSB3aWxsIG92ZXJyaWRlIGFueSB1c2VyIHByb3ZpZGVkIHdlaWdodHNcbiAgIyBcIndlaWdodF9ieV9udW1fZG9jdW1lbnRzXCI6IGZhbHNlLFxuICAjIFwid2VpZ2h0ZWRfc2FtcGxlcl9hbHBoYVwiOiAwLjMsXG5cbiAgXCJ2b2NhYl9maWxlXCI6IFwiZGF0YS9ncHQyLXZvY2FiLmpzb25cIixcbiAgXCJtZXJnZV9maWxlXCI6IFwiZGF0YS9ncHQyLW1lcmdlcy50eHRcIixcbiAgXCJsYXVuY2hlclwiOiBcIm1waWNoXCIsXG4gIFwiZGVlcHNwZWVkX21waVwiOiB0cnVlLFxuXG4gIFwic2F2ZVwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwibG9hZFwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwiY2hlY2twb2ludF92YWxpZGF0aW9uX3dpdGhfZm9yd2FyZF9wYXNzXCI6IEZhbHNlLFxuXG4gIFwidGVuc29yYm9hcmRfZGlyXCI6IFwidGVuc29yYm9hcmRcIixcbiAgXCJsb2dfZGlyXCI6IFwibG9nc1wiLFxuICBcInVzZV93YW5kYlwiOiBUcnVlLFxuICBcIndhbmRiX2hvc3RcIjogXCJodHRwczovL2FwaS53YW5kYi5haVwiLFxufVxuIn0sICJsb2FkIjogImNoZWNrcG9pbnRzIiwgImNoZWNrcG9pbnRfZmFjdG9yIjogMTAwMDAsICJiYXRjaF9zaXplIjogMTQsICJ0cmFpbl9pdGVycyI6IDYsICJldmFsX2l0ZXJzIjogMTAsICJrZWVwX2xhc3Rfbl9jaGVja3BvaW50cyI6IDQsICJ2b2NhYl9maWxlIjogImRhdGEvZ3B0Mi12b2NhYi5qc29uIiwgIm1lcmdlX2ZpbGUiOiAiZGF0YS9ncHQyLW1lcmdlcy50eHQiLCAiY2hlY2twb2ludF9hY3RpdmF0aW9ucyI6IHRydWUsICJzeW5jaHJvbml6ZV9lYWNoX2xheWVyIjogdHJ1ZSwgInBhcnRpdGlvbl9hY3RpdmF0aW9ucyI6IHRydWUsICJkeW5hbWljX2xvc3Nfc2NhbGUiOiB0cnVlLCAicGlwZV9wYXJhbGxlbF9zaXplIjogMSwgImNvbnRleHRfcGFyYWxsZWxfc2l6ZSI6IDIsICJ6aWd6YWdfdG9rZW5zIjogdHJ1ZSwgInRvcG9sb2d5X29yZGVyIjogWyJkYXRhIiwgInBpcGUiLCAiY29udGV4dCIsICJtb2RlbCJdLCAid29ybGRfc2l6ZSI6IDEsICJpc19waXBlX3BhcmFsbGVsIjogdHJ1ZSwgInVzZV93YW5kYiI6IHRydWUsICJ3YW5kYl9ncm91cCI6ICJxbm8zZDdmOV9pM2pvamxudSIsICJsb2dfZGlyIjogImxvZ3MiLCAidGVuc29yYm9hcmRfZGlyIjogInRlbnNvcmJvYXJkIiwgImxvZ19pbnRlcnZhbCI6IDEsICJ0ZXh0X2dlbl90eXBlIjogInVuY29uZGl0aW9uYWwiLCAiZGlzdHJpYnV0ZWRfYmFja2VuZCI6ICJ4Y2NsIiwgImxvY2FsX3JhbmsiOiAwLCAicmFuayI6IDAsICJkZWVwc3BlZWRfbXBpIjogdHJ1ZSwgInVzZXJfc2NyaXB0IjogInRyYWluLnB5IiwgImdsb2JhbF9udW1fZ3B1cyI6IDJ9']
+
+[2026-10-29 00:22:11,537] [INFO] [runner.py:630:main] cmd = mpirun -n 2 -ppn 2 -genv PYTHONPATH=/lus/flare/projects/FoundMedicine/jahatef/gpt-neox:/lus/flare/projects/FoundMedicine/jahatef/DeepSpeed:/opt/aurora/26.26.0/oneapi/advisor/latest/pythonapi:/lus/flare/projects/FoundMedicine/jahatef/gpt-neox -genv PYTHONUSERBASE=/home/jahatef/.local/aurora/frameworks/2025.3.1 -genv WANDB_API_KEY=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 -genv MASTER_ADDR x4601c7s2b0n0.hsn.cm.aurora.alcf.anl.gov -genv MASTER_PORT 29500 -genv WORLD_SIZE 2 -genv LOCAL_SIZE 2 -hosts x4601c7s2b0n0.hsn.cm.aurora.alcf.anl.gov /opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/bin/python -u /lus/flare/projects/FoundMedicine/jahatef/DeepSpeed/deepspeed/launcher/launcher_helper.py --launcher mpich train.py --deepspeed_config eyJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlfQ== --megatron_config eyJsYXVuY2hlciI6ICJtcGljaCIsICJ0cmFpbl9iYXRjaF9zaXplIjogMTQsICJ0cmFpbl9taWNyb19iYXRjaF9zaXplX3Blcl9ncHUiOiAxNCwgIm9wdGltaXplciI6IHsidHlwZSI6ICJBZGFtIiwgInBhcmFtcyI6IHsibHIiOiAwLjAwMDE2LCAiYmV0YXMiOiBbMC45LCAwLjk1XSwgImVwcyI6IDFlLTA4fX0sICJiZjE2IjogeyJlbmFibGVkIjogdHJ1ZX0sICJ6ZXJvX29wdGltaXphdGlvbiI6IHsic3RhZ2UiOiAxLCAiYWxsZ2F0aGVyX3BhcnRpdGlvbnMiOiB0cnVlLCAiYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAib3ZlcmxhcF9jb21tIjogdHJ1ZSwgInJlZHVjZV9zY2F0dGVyIjogdHJ1ZSwgInJlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgImNvbnRpZ3VvdXNfZ3JhZGllbnRzIjogdHJ1ZX0sICJzdGVwc19wZXJfcHJpbnQiOiAxLCAid2FsbF9jbG9ja19icmVha2Rvd24iOiB0cnVlLCAicHJlY2lzaW9uIjogImJmbG9hdDE2IiwgIm51bV9sYXllcnMiOiAzMiwgImhpZGRlbl9zaXplIjogMjU2MCwgIm51bV9hdHRlbnRpb25faGVhZHMiOiAzMiwgInNlcV9sZW5ndGgiOiA0MDk2LCAibWF4X3Bvc2l0aW9uX2VtYmVkZGluZ3MiOiA0MDk2LCAicG9zX2VtYiI6ICJyb3RhcnkiLCAibm9fd2VpZ2h0X3R5aW5nIjogdHJ1ZSwgImF0dGVudGlvbl9jb25maWciOiBbInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiLCAicmluZ1gzIiwgInJpbmdYMyIsICJyaW5nWDMiXSwgInNwYXJzaXR5X2NvbmZpZyI6IHt9LCAiaW5pdF9tZXRob2QiOiAic21hbGxfaW5pdCIsICJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2QiOiAid2FuZ19pbml0IiwgImxyX2RlY2F5X3N0eWxlIjogImNvc2luZSIsICJscl9kZWNheV9pdGVycyI6IDYsICJtaW5fbHIiOiAxLjZlLTA1LCAib3B0aW1pemVyX3R5cGUiOiAiQWRhbSIsICJ6ZXJvX3N0YWdlIjogMSwgInplcm9fcmVkdWNlX3NjYXR0ZXIiOiB0cnVlLCAiemVyb19jb250aWd1b3VzX2dyYWRpZW50cyI6IHRydWUsICJ6ZXJvX3JlZHVjZV9idWNrZXRfc2l6ZSI6IDUwMDAwMDAwMCwgInplcm9fYWxsZ2F0aGVyX2J1Y2tldF9zaXplIjogNTAwMDAwMDAwLCAibHIiOiAwLjAwMDE2LCAiZGF0YV9wYXRoIjogImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50IiwgImRhdGFfaW1wbCI6ICJtbWFwIiwgInNhdmUiOiAiY2hlY2twb2ludHMiLCAiY29uZmlnX2ZpbGVzIjogeyIyLTdCLnltbCI6ICIjIEdQVC0yIHByZXRyYWluaW5nIHNldHVwXG57XG4gICAjIHBhcmFsbGVsaXNtIHNldHRpbmdzICggeW91IHdpbGwgd2FudCB0byBjaGFuZ2UgdGhlc2UgYmFzZWQgb24geW91ciBjbHVzdGVyIHNldHVwLCBpZGVhbGx5IHNjaGVkdWxpbmcgcGlwZWxpbmUgc3RhZ2VzXG4gICAjIGFjcm9zcyB0aGUgbm9kZSBib3VuZGFyaWVzIClcbiAgIFwicGlwZV9wYXJhbGxlbF9zaXplXCI6IDEsXG4gICBcIm1vZGVsX3BhcmFsbGVsX3NpemVcIjogMSxcbiAgIFwiYXR0ZW50aW9uX2NvbmZpZ1wiOiBbXG4gICBbXG4gICAgICBbXG4gICAgICAgIFwicmluZ1gzXCJcbiAgICAgIF0sXG4gICAgICAzMlxuICAgXVxuICAgXSxcbiAgIFwiemlnemFnLXRva2Vuc1wiOiB0cnVlLFxuICAgXCJ0b3BvbG9neV9vcmRlclwiOiBbXG4gICBcImRhdGFcIixcbiAgIFwicGlwZVwiLFxuICAgXCJjb250ZXh0XCIsXG4gICBcIm1vZGVsXCJcbiAgIF0sXG4gICAjIG1vZGVsIHNldHRpbmdzXG4gICBcIm51bV9sYXllcnNcIjogMzIsXG4gICBcImhpZGRlbl9zaXplXCI6IDI1NjAsXG4gICBcIm51bV9hdHRlbnRpb25faGVhZHNcIjogMzIsXG4gICBcIm5vcm1cIjogXCJsYXllcm5vcm1cIixcbiAgIFwicG9zX2VtYlwiOiBcInJvdGFyeVwiLFxuICAgXCJub193ZWlnaHRfdHlpbmdcIjogdHJ1ZSxcbiAgIFwiZ3B0X2pfcmVzaWR1YWxcIjogZmFsc2UsXG4gICBcIm91dHB1dF9sYXllcl9wYXJhbGxlbGlzbVwiOiBcImNvbHVtblwiLFxuXG4gICAjIHRoZXNlIHNob3VsZCBwcm92aWRlIHNvbWUgc3BlZWR1cCBidXQgdGFrZXMgYSB3aGlsZSB0byBidWlsZCwgc2V0IHRvIHRydWUgaWYgZGVzaXJlZFxuICAgXCJzY2FsZWRfdXBwZXJfdHJpYW5nX21hc2tlZF9zb2Z0bWF4X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwiYmlhc19nZWx1X2Z1c2lvblwiOiBmYWxzZSxcbiAgIFwicm9wZV9mdXNpb25cIjogZmFsc2UsXG4gICBcImxheWVybm9ybV9mdXNpb25cIjogZmFsc2UsXG5cbiAgICMgaW5pdCBtZXRob2RzXG4gICBcImluaXRfbWV0aG9kXCI6IFwic21hbGxfaW5pdFwiLFxuICAgXCJvdXRwdXRfbGF5ZXJfaW5pdF9tZXRob2RcIjogXCJ3YW5nX2luaXRcIixcblxuICAgIyBvcHRpbWl6ZXIgc2V0dGluZ3NcbiAgIFwib3B0aW1pemVyXCI6IHtcbiAgICAgXCJ0eXBlXCI6IFwiQWRhbVwiLFxuICAgICBcInBhcmFtc1wiOiB7XG4gICAgICAgXCJsclwiOiAwLjAwMDE2LFxuICAgICAgIFwiYmV0YXNcIjogWzAuOSwgMC45NV0sXG4gICAgICAgXCJlcHNcIjogMS4wZS04LFxuICAgICB9XG4gICB9LFxuICAgXCJtaW5fbHJcIjogMC4wMDAwMTYsXG5cbiAgICMgZm9yIGFsbCB6ZXJvX29wdGltaXphdGlvbiBvcHRpb25zLCBzZWUgaHR0cHM6Ly93d3cuZGVlcHNwZWVkLmFpL2RvY3MvY29uZmlnLWpzb24vI3plcm8tb3B0aW1pemF0aW9ucy1mb3ItZnAxNi10cmFpbmluZ1xuICAgXCJ6ZXJvX29wdGltaXphdGlvblwiOiB7XG4gICAgXCJzdGFnZVwiOiAxLFxuICAgIFwiYWxsZ2F0aGVyX3BhcnRpdGlvbnNcIjogVHJ1ZSxcbiAgICBcImFsbGdhdGhlcl9idWNrZXRfc2l6ZVwiOiA1MDAwMDAwMDAsXG4gICAgXCJvdmVybGFwX2NvbW1cIjogVHJ1ZSxcbiAgICBcInJlZHVjZV9zY2F0dGVyXCI6IFRydWUsXG4gICAgXCJyZWR1Y2VfYnVja2V0X3NpemVcIjogNTAwMDAwMDAwLFxuICAgIFwiY29udGlndW91c19ncmFkaWVudHNcIjogVHJ1ZSxcbiAgIH0sXG5cbiAgICMgYmF0Y2ggLyBkYXRhIHNldHRpbmdzXG4gICBcInRyYWluX21pY3JvX2JhdGNoX3NpemVfcGVyX2dwdVwiOiAxNCxcbiAgIFwiZGF0YV9pbXBsXCI6IFwibW1hcFwiLFxuXG4gICAjIGFjdGl2YXRpb24gY2hlY2twb2ludGluZ1xuICAgXCJjaGVja3BvaW50X2FjdGl2YXRpb25zXCI6IHRydWUsXG4gICBcImNoZWNrcG9pbnRfbnVtX2xheWVyc1wiOiAxLFxuICAgXCJwYXJ0aXRpb25fYWN0aXZhdGlvbnNcIjogdHJ1ZSxcbiAgIFwic3luY2hyb25pemVfZWFjaF9sYXllclwiOiB0cnVlLFxuXG4gICAjIHJlZ3VsYXJpemF0aW9uXG4gICBcImdyYWRpZW50X2NsaXBwaW5nXCI6IDEuMCxcbiAgIFwid2VpZ2h0X2RlY2F5XCI6IDAuMSxcbiAgIFwiaGlkZGVuX2Ryb3BvdXRcIjogMCxcbiAgIFwiYXR0ZW50aW9uX2Ryb3BvdXRcIjogMCxcblxuICAgIyBwcmVjaXNpb24gc2V0dGluZ3NcbiAgIFwiYmYxNlwiOiB7XG4gICAgIFwiZW5hYmxlZFwiOiB0cnVlXG4gICB9LFxuICAgIyBtaXNjLiB0cmFpbmluZyBzZXR0aW5nc1xuICAgXCJ0cmFpbl9pdGVyc1wiOiA2LFxuICAgXCJscl9kZWNheV9pdGVyc1wiOiA2LFxuICAgXCJkaXN0cmlidXRlZF9iYWNrZW5kXCI6IFwieGNjbFwiLFxuICAgXCJscl9kZWNheV9zdHlsZVwiOiBcImNvc2luZVwiLFxuICAgXCJ3YXJtdXBcIjogMC4wMSxcbiAgIFwiY2hlY2twb2ludF9mYWN0b3JcIjogMTAwMDAsXG4gICBcImV2YWxfaW50ZXJ2YWxcIjogMTAwMCxcbiAgIFwiZXZhbF9pdGVyc1wiOiAxMCxcblxuICAgIyBsb2dnaW5nXG4gICBcImxvZ19pbnRlcnZhbFwiOiAxLFxuICAgXCJzdGVwc19wZXJfcHJpbnRcIjogMSxcbiAgIFwia2VlcF9sYXN0X25fY2hlY2twb2ludHNcIjogNCxcbiAgIFwid2FsbF9jbG9ja19icmVha2Rvd25cIjogdHJ1ZSxcbn1cbiIsICJjcDIueW1sIjogIntcbiAgXCJjb250ZXh0X3BhcmFsbGVsX3NpemVcIjogMixcbn1cbiIsICI0MDk2LnltbCI6ICJzZXFfbGVuZ3RoOiA0MDk2XG5tYXhfcG9zaXRpb25fZW1iZWRkaW5nczogNDA5NlxuIiwgImxvY2FsX3NldHVwX3dhbmRiLnltbCI6ICIjIFN1Z2dlc3RlZCBkYXRhIHBhdGhzIHdoZW4gdXNpbmcgR1BULU5lb1ggbG9jYWxseVxue1xuICBcImRhdGFfcGF0aFwiOiBcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsXG5cbiAgIyBvciBmb3Igd2VpZ2h0ZWQgZGF0YXNldHM6XG4gICMgXCJ0cmFpbi1kYXRhLXBhdGhzXCI6IFtcImRhdGEvZW53aWs4L2Vud2lrOF90ZXh0X2RvY3VtZW50XCIsIFwiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIl0sXG4gICMgXCJ0ZXN0LWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInZhbGlkLWRhdGEtcGF0aHNcIjogW1wiZGF0YS9lbndpazgvZW53aWs4X3RleHRfZG9jdW1lbnRcIiwgXCJkYXRhL2Vud2lrOC9lbndpazhfdGV4dF9kb2N1bWVudFwiXSxcbiAgIyBcInRyYWluLWRhdGEtd2VpZ2h0c1wiOiBbMS4sIDIuXSxcbiAgIyBcInRlc3QtZGF0YS13ZWlnaHRzXCI6IFsyLiwgMS5dLFxuICAjIFwidmFsaWQtZGF0YS13ZWlnaHRzXCI6IFswLjUsIDAuNF0sXG5cbiAgIyBJZiB3ZWlnaHRfYnlfbnVtX2RvY3VtZW50cyBpcyBUcnVlLCBCdWlsZHMgZGF0YXNldCB3ZWlnaHRzIGZyb20gYSBtdWx0aW5vbWlhbCBkaXN0cmlidXRpb24gb3ZlciBncm91cHMgb2YgZGF0YSBhY2NvcmRpbmcgdG8gdGhlIG51bWJlciBvZiBkb2N1bWVudHMgaW4gZWFjaCBncm91cC5cbiAgIyBXQVJOSU5HOiBzZXR0aW5nIHRoaXMgdG8gVHJ1ZSB3aWxsIG92ZXJyaWRlIGFueSB1c2VyIHByb3ZpZGVkIHdlaWdodHNcbiAgIyBcIndlaWdodF9ieV9udW1fZG9jdW1lbnRzXCI6IGZhbHNlLFxuICAjIFwid2VpZ2h0ZWRfc2FtcGxlcl9hbHBoYVwiOiAwLjMsXG5cbiAgXCJ2b2NhYl9maWxlXCI6IFwiZGF0YS9ncHQyLXZvY2FiLmpzb25cIixcbiAgXCJtZXJnZV9maWxlXCI6IFwiZGF0YS9ncHQyLW1lcmdlcy50eHRcIixcbiAgXCJsYXVuY2hlclwiOiBcIm1waWNoXCIsXG4gIFwiZGVlcHNwZWVkX21waVwiOiB0cnVlLFxuXG4gIFwic2F2ZVwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwibG9hZFwiOiBcImNoZWNrcG9pbnRzXCIsXG4gIFwiY2hlY2twb2ludF92YWxpZGF0aW9uX3dpdGhfZm9yd2FyZF9wYXNzXCI6IEZhbHNlLFxuXG4gIFwidGVuc29yYm9hcmRfZGlyXCI6IFwidGVuc29yYm9hcmRcIixcbiAgXCJsb2dfZGlyXCI6IFwibG9nc1wiLFxuICBcInVzZV93YW5kYlwiOiBUcnVlLFxuICBcIndhbmRiX2hvc3RcIjogXCJodHRwczovL2FwaS53YW5kYi5haVwiLFxufVxuIn0sICJsb2FkIjogImNoZWNrcG9pbnRzIiwgImNoZWNrcG9pbnRfZmFjdG9yIjogMTAwMDAsICJiYXRjaF9zaXplIjogMTQsICJ0cmFpbl9pdGVycyI6IDYsICJldmFsX2l0ZXJzIjogMTAsICJrZWVwX2xhc3Rfbl9jaGVja3BvaW50cyI6IDQsICJ2b2NhYl9maWxlIjogImRhdGEvZ3B0Mi12b2NhYi5qc29uIiwgIm1lcmdlX2ZpbGUiOiAiZGF0YS9ncHQyLW1lcmdlcy50eHQiLCAiY2hlY2twb2ludF9hY3RpdmF0aW9ucyI6IHRydWUsICJzeW5jaHJvbml6ZV9lYWNoX2xheWVyIjogdHJ1ZSwgInBhcnRpdGlvbl9hY3RpdmF0aW9ucyI6IHRydWUsICJkeW5hbWljX2xvc3Nfc2NhbGUiOiB0cnVlLCAicGlwZV9wYXJhbGxlbF9zaXplIjogMSwgImNvbnRleHRfcGFyYWxsZWxfc2l6ZSI6IDIsICJ6aWd6YWdfdG9rZW5zIjogdHJ1ZSwgInRvcG9sb2d5X29yZGVyIjogWyJkYXRhIiwgInBpcGUiLCAiY29udGV4dCIsICJtb2RlbCJdLCAid29ybGRfc2l6ZSI6IDEsICJpc19waXBlX3BhcmFsbGVsIjogdHJ1ZSwgInVzZV93YW5kYiI6IHRydWUsICJ3YW5kYl9ncm91cCI6ICJxbm8zZDdmOV9pM2pvamxudSIsICJsb2dfZGlyIjogImxvZ3MiLCAidGVuc29yYm9hcmRfZGlyIjogInRlbnNvcmJvYXJkIiwgImxvZ19pbnRlcnZhbCI6IDEsICJ0ZXh0X2dlbl90eXBlIjogInVuY29uZGl0aW9uYWwiLCAiZGlzdHJpYnV0ZWRfYmFja2VuZCI6ICJ4Y2NsIiwgImxvY2FsX3JhbmsiOiAwLCAicmFuayI6IDAsICJkZWVwc3BlZWRfbXBpIjogdHJ1ZSwgInVzZXJfc2NyaXB0IjogInRyYWluLnB5IiwgImdsb2JhbF9udW1fZ3B1cyI6IDJ9
+Unable to import Mamba kernels. Install them from our requirements/requirements-mamba.txt,     or directly from https://github.com/state-spaces/mamba
+Unable to import Mamba kernels. Install them from our requirements/requirements-mamba.txt,     or directly from https://github.com/state-spaces/mamba
+For s3 checkpointing, please install boto3 either using requirements/requirements-s3.txt or https://github.com/boto/boto3
+For s3 checkpointing, please install hf_transfer either using requirements/requirements-s3.txt or https://github.com/huggingface/hf_transfer
+For s3 checkpointing, please install boto3 either using requirements/requirements-s3.txt or https://github.com/boto/boto3
+For s3 checkpointing, please install hf_transfer either using requirements/requirements-s3.txt or https://github.com/huggingface/hf_transfer
+WARNING:root:Outstanding DeepSpeed issue means that pp>0, zero1, and bf16 will break without fp32 grads
+WARNING:root:Outstanding DeepSpeed issue means that pp>0, zero1, and bf16 will break without fp32 grads
+NeoXArgs.configure_distributed_args() using world size: 2 and model-parallel size: 1 
+> building GPT2BPETokenizer tokenizer ...
+ > padded vocab (size: 50257) with 47 dummy tokens (new size: 50304)
+WARNING: TensorBoard writing requested but is not available (are you using PyTorch 1.1.0 or later and do you have tensorboard installed?), no TensorBoard logs will be written.
+wandb: Tracking run with wandb version 0.24.2
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /lus/flare/projects/FoundMedicine/jahatef/gpt-neox/wandb/offline-run-20261029_002224-v20hyb40
+> initializing torch distributed ...
+DEEPSPEED INIT
+ENTERING INIT MP
+DEEPSPEED INIT
+EXITING INIT MP
+ENTERING INIT MP
+> initializing model parallel with size 1
+MPU DP: [0, 1]
+MPU PP: [0]
+MPU PP: [1]
+MPU CP: [0, 1]
+MPU MP: [0]
+MPU MP: [1]
+EXITING INIT MP
+> setting random seeds to 1234 ...
+make: Entering directory '/lus/flare/projects/FoundMedicine/jahatef/gpt-neox/megatron/data'
+io parallel size: 2, before all_reduce
+make: Nothing to be done for 'default'.
+make: Leaving directory '/lus/flare/projects/FoundMedicine/jahatef/gpt-neox/megatron/data'
+> building train, validation, and test datasets ...
+    reading sizes...
+    reading pointers...
+    reading document index...
+    creating numpy buffer of mmap...
+    creating memory view of numpy buffer...
+ > dataset split:
+    train:
+     document indices in [0, 1) total of 1 documents
+    validation:
+     document indices in [1, 1) total of 0 documents
+    test:
+     document indices in [1, 1) total of 0 documents
+io parallel size: 2, before all_reduce
+2026:10:29-00:22:30:436623 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:29-00:22:30:436623 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+io parallel size: 2io parallel size: 2
+
+ > loading doc-idx mapping from data/enwik8/enwik8_text_document_train_indexmap_84ns_4096sl_1234s_packedpi_ac_doc_idx.npy
+ > loading sample-idx mapping from data/enwik8/enwik8_text_document_train_indexmap_84ns_4096sl_1234s_packedpi_ac_sample_idx.npy
+ > loading shuffle-idx mapping from data/enwik8/enwik8_text_document_train_indexmap_84ns_4096sl_1234s_packedpi_ac_shuffle_idx.npy
+    loaded indexed file in 0.082 seconds
+    total number of samples: 7084
+    total number of epochs: 1/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+
+before flag broadcast, pipe_parallel: True, rank: 1
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+before flag broadcast, pipe_parallel: True, rank: 0
+after flag broadcastafter flag broadcast
+
+building GPT2 model ...
+SEED_LAYERS=False BASE_SEED=1234 SEED_FN=None
+Using topology: {ProcessCoord(data=0, pipe=0, context=0, model=0): 0, ProcessCoord(data=0, pipe=0, context=1, model=0): 1}
+stage=0 layers=37
+     0: EmbeddingPipe
+     1: _pre_transformer_block
+     2: ParallelTransformerLayerPipe
+     3: ParallelTransformerLayerPipe
+     4: ParallelTransformerLayerPipe
+     5: ParallelTransformerLayerPipe
+     6: ParallelTransformerLayerPipe
+     7: ParallelTransformerLayerPipe
+     8: ParallelTransformerLayerPipe
+     9: ParallelTransformerLayerPipe
+    10: ParallelTransformerLayerPipe
+    11: ParallelTransformerLayerPipe
+    12: ParallelTransformerLayerPipe
+    13: ParallelTransformerLayerPipe
+    14: ParallelTransformerLayerPipe
+    15: ParallelTransformerLayerPipe
+    16: ParallelTransformerLayerPipe
+    17: ParallelTransformerLayerPipe
+    18: ParallelTransformerLayerPipe
+    19: ParallelTransformerLayerPipe
+    20: ParallelTransformerLayerPipe
+    21: ParallelTransformerLayerPipe
+    22: ParallelTransformerLayerPipe
+    23: ParallelTransformerLayerPipe
+    24: ParallelTransformerLayerPipe
+    25: ParallelTransformerLayerPipe
+    26: ParallelTransformerLayerPipe
+    27: ParallelTransformerLayerPipe
+    28: ParallelTransformerLayerPipe
+    29: ParallelTransformerLayerPipe
+    30: ParallelTransformerLayerPipe
+    31: ParallelTransformerLayerPipe
+    32: ParallelTransformerLayerPipe
+    33: ParallelTransformerLayerPipe
+    34: _post_transformer_block
+    35: NormPipe
+    36: ParallelLinearPipe
+  loss: partial
+Configuring Optimizer type: Adam with params: {'lr': 0.00016, 'betas': [0.9, 0.95], 'eps': 1e-08}
+WARNING: APEX not installed - defaulting to deepspeed's fused adam
+WARNING: APEX not installed - defaulting to deepspeed's fused adam
+ninja: no work to do.
+Time to load fused_adam op: 0.9295508861541748 secondsTime to load fused_adam op: 0.930269718170166 seconds
+created adam opt
+
+created adam opt
+> learning rate decay style: cosine
+DeepSpeed is enabled.
+[2026-10-29 00:22:33,988] [WARNING] [engine.py:2351:_configure_zero_optimizer] Pipeline parallelism does not support overlapped communication, will be disabled.
+[2026-10-29 00:22:33,988] [WARNING] [engine.py:2351:_configure_zero_optimizer] Pipeline parallelism does not support overlapped communication, will be disabled.
+ > number of parameters on model parallel rank 0: 2775208960
+ > total params: 2,775,208,960
+[2026-10-29 00:22:34,431] [WARNING] [engine.py:4272:load_checkpoint] Unable to find latest file at checkpoints/latest, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint.
+[2026-10-29 00:22:34,431] [WARNING] [engine.py:4272:load_checkpoint] Unable to find latest file at checkpoints/latest, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint.
+Unable to load checkpoint.
+Loading checkpoint and starting from iteration 0
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+setting training data start iteration to 0
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+ENTERING TRAIN
+done with setups ...
+time (ms) | train/valid/test data loaders: 979.24 | model and optimizer: 2485.03 | train/valid/test data iterators: 48.42
+training ...
+ENTERING TRAIN
+[Rank 0] time (ms) | optimizer_allgather: 17.24 | optimizer_gradients: 35.26 | optimizer_step: 234.98
+[Rank 0] time (ms) | batch_input: 457.19 | fwd_microstep: 14626.54 | bwd_microstep: 38368.24 | bwd_inner_microstep: 38368.19 | bwd_allreduce_microstep: 0.03 | step_microstep: 599.50
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 54.56808137893677, world_size: 2
+
+
+[Rank 0] time (ms) | fwd: 14626.46 | bwd: 38368.21 | bwd_inner: 38368.17 | bwd_allreduce: 0.03 | step: 599.50
+steps: 1 loss: 10.9827 iter time (s): 54.494 samples/sec: 0.257
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 56.061405181884766, world_size: 2
+
+ samples/sec: 0.250 | iteration        1/       6 | elapsed time per iteration (ms): 56061.4 | learning rate: 1.513E-04 | approx flops per GPU: 13.4TFLOPS | lm_loss: 1.098275E+01 | number of skipped iterations:   0 | number of nan iterations:   0 |
+after 1 iterations memory (MB) | allocated: 23935.94873046875 | max allocated: 31870.51220703125 | reserved: 48992.0 | max reserved: 48992.0
+time (ms)
+[Rank 0] time (ms) | optimizer_allgather: 19.10 | optimizer_gradients: 40.78 | optimizer_step: 74.96
+[Rank 0] time (ms) | batch_input: 4.80 | fwd_microstep: 13702.56 | bwd_microstep: 38057.40 | bwd_inner_microstep: 38057.34 | bwd_allreduce_microstep: 0.01 | step_microstep: 234.22
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 53.85868430137634, world_size: 2
+
+[Rank 0] time (ms) | fwd: 13702.54 | bwd: 38057.40 | bwd_inner: 38057.34 | bwd_allreduce: 0.01 | step: 234.25
+steps: 2 loss: 9.3058 iter time (s): 52.292 samples/sec: 0.268
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.366068601608276, world_size: 2
+
+ samples/sec: 0.267 | iteration        2/       6 | elapsed time per iteration (ms): 52366.1 | learning rate: 1.253E-04 | approx flops per GPU: 14.4TFLOPS | lm_loss: 9.305803E+00 | number of skipped iterations:   0 | number of nan iterations:   0 |
+time (ms)
+[Rank 0] time (ms) | optimizer_allgather: 18.82 | optimizer_gradients: 41.00 | optimizer_step: 75.11
+[Rank 0] time (ms) | batch_input: 4.30 | fwd_microstep: 13757.53 | bwd_microstep: 38079.52 | bwd_inner_microstep: 38079.44 | bwd_allreduce_microstep: 0.01 | step_microstep: 234.24
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.44209694862366, world_size: 2
+
+
+[Rank 0] time (ms) | fwd: 13757.51 | bwd: 38079.51 | bwd_inner: 38079.46 | bwd_allreduce: 0.01 | step: 234.26
+steps: 3 loss: 12.1830 iter time (s): 52.368 samples/sec: 0.267
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.44193410873413, world_size: 2
+
+ samples/sec: 0.267 | iteration        3/       6 | elapsed time per iteration (ms): 52441.9 | learning rate: 8.914E-05 | approx flops per GPU: 14.4TFLOPS | lm_loss: 1.218303E+01 | number of skipped iterations:   0 | number of nan iterations:   0 |
+time (ms)
+[Rank 0] time (ms) | optimizer_allgather: 18.78 | optimizer_gradients: 40.74 | optimizer_step: 75.27
+[Rank 0] time (ms) | batch_input: 4.30 | fwd_microstep: 13752.13 | bwd_microstep: 38048.98 | bwd_inner_microstep: 38048.93 | bwd_allreduce_microstep: 0.01 | step_microstep: 233.85
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.40539598464966, world_size: 2
+
+[Rank 0] time (ms) | fwd: 13752.12 | bwd: 38048.98 | bwd_inner: 38048.93 | bwd_allreduce: 0.01 | step: 233.88
+steps: 4 loss: 10.6097 iter time (s): 52.332 samples/sec: 0.268
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.40532851219177, world_size: 2
+
+ samples/sec: 0.267 | iteration        4/       6 | elapsed time per iteration (ms): 52405.3 | learning rate: 5.266E-05 | approx flops per GPU: 14.4TFLOPS | lm_loss: 1.060969E+01 | number of skipped iterations:   0 | number of nan iterations:   0 |
+time (ms)
+[Rank 0] time (ms) | optimizer_allgather: 18.93 | optimizer_gradients: 40.89 | optimizer_step: 74.86
+[Rank 0] time (ms) | batch_input: 4.25 | fwd_microstep: 13742.74 | bwd_microstep: -305536.42 | bwd_inner_microstep: -305536.48 | bwd_allreduce_microstep: 0.01 | step_microstep: 233.51
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.407071352005005, world_size: 2
+
+
+[Rank 0] time (ms) | fwd: 13742.72 | bwd: -305536.43 | bwd_inner: -305536.48 | bwd_allreduce: 0.01 | step: 233.54
+steps: 5 loss: 9.6894 iter time (s): -291.264 samples/sec: -0.048
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.407155990600586, world_size: 2
+
+ samples/sec: 0.267 | iteration        5/       6 | elapsed time per iteration (ms): 52407.2 | learning rate: 2.584E-05 | approx flops per GPU: 14.4TFLOPS | lm_loss: 9.689396E+00 | number of skipped iterations:   0 | number of nan iterations:   0 |
+time (ms)
+[Rank 0] time (ms) | optimizer_allgather: 18.72 | optimizer_gradients: 40.78 | optimizer_step: 75.31
+[Rank 0] time (ms) | batch_input: 4.28 | fwd_microstep: 13738.71 | bwd_microstep: 38030.04 | bwd_inner_microstep: 38029.98 | bwd_allreduce_microstep: 0.01 | step_microstep: 234.47
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.373745918273926, world_size: 2
+
+[Rank 0] time (ms) | fwd: 13738.69 | bwd: 38030.04 | bwd_inner: 38029.99 | bwd_allreduce: 0.01 | step: 234.50
+steps: 6 loss: 9.4045 iter time (s): 52.300 samples/sec: 0.268
+[Rank 0] time (ms)
+
+seq_len: 4096, flops_per_iteration: 1506658421309440.0, iter_time: 52.37367105484009, world_size: 2
+
+ samples/sec: 0.267 | iteration        6/       6 | elapsed time per iteration (ms): 52373.7 | learning rate: 1.600E-05 | approx flops per GPU: 14.4TFLOPS | lm_loss: 9.404533E+00 | number of skipped iterations:   0 | number of nan iterations:   0 |
+time (ms)
+/opt/aurora/26.26.0/frameworks/aurora_frameworks-2025.3.1/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /lus/flare/projects/FoundMedicine/jahatef/gpt-neox/wandb/offline-run-20261029_002224-v20hyb40[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/offline-run-20261029_002224-v20hyb40/logs[0m
+read: error: buf 0x153cb00014e0, size 394, shift 0
+2026:10:29-00:28:15:437024:[1] |CCL_ERROR| internal_kvs_server.hpp:153 get: read/write error: Bad file descriptor
+2026:10:29-00:28:15:437024:[1] |CCL_ERROR| internal_kvs_server.cpp:329 check_finalize: server: get control msg from client
+2026:10:29-00:28:15:437024:[1] |CCL_ERROR| internal_kvs_server.cpp:395 run: failed to check finalize
+2026:10:29-00:28:15:437024:[1] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed
+2026:10:29-00:28:15:437001:[1] |CCL_ERROR| internal_kvs_server.cpp:87 try_to_connect_new: server_listen_sock accept:Bad file descriptor
+2026:10:29-00:28:15:437001:[1] |CCL_ERROR| internal_kvs_server.cpp:393 run: failed to connect new
+2026:10:29-00:28:15:437001:[1] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed
+2026:10:29-00:28:15:437021:[1] |CCL_ERROR| internal_kvs_server.cpp:87 try_to_connect_new: server_listen_sock accept:Bad file descriptor
+2026:10:29-00:28:15:437021:[1] |CCL_ERROR| internal_kvs_server.cpp:393 run: failed to connect new
+2026:10:29-00:28:15:437021:[1] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed
+read: error: buf 0x14b8bc001530, size 394, shift 0
+2026:10:29-00:28:15:437023:[0] |CCL_ERROR| internal_kvs_server.hpp:153 get: read/write error: Bad file descriptor
+2026:10:29-00:28:15:437023:[0] |CCL_ERROR| internal_kvs_server.cpp:329 check_finalize: server: get control msg from client
+2026:10:29-00:28:15:437023:[0] |CCL_ERROR| internal_kvs_server.cpp:395 run: failed to check finalize
+2026:10:29-00:28:15:437023:[0] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed
+2026:10:29-00:28:15:437002:[0] |CCL_ERROR| internal_kvs_server.cpp:87 try_to_connect_new: server_listen_sock accept:Bad file descriptor
+2026:10:29-00:28:15:437002:[0] |CCL_ERROR| internal_kvs_server.cpp:393 run: failed to connect new
+2026:10:29-00:28:15:437002:[0] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed
+2026:10:29-00:28:15:437022:[0] |CCL_ERROR| internal_kvs_server.cpp:87 try_to_connect_new: server_listen_sock accept:Bad file descriptor
+2026:10:29-00:28:15:437022:[0] |CCL_ERROR| internal_kvs_server.cpp:393 run: failed to connect new
+2026:10:29-00:28:15:437022:[0] |CCL_ERROR| internal_kvs_server.cpp:423 kvs_server_init: failed

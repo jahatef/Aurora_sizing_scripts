@@ -1,0 +1,735 @@
+local_rank: 1
+rank is 1
+local_rank: 0
+rank is 0
+2026:10:26-23:45:32:3359547 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:26-23:45:32:3359547 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 3072
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+ngpus: 2, causal: True, batch: 4, seqlen: 3072, num_heads: 32, head_dim: 64
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 64, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 2, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Autotuning kernel _attn_fwd with config BLOCK_M: 128, BLOCK_N: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning failed with at 13:4:
+              Z, H, desc_q, desc_k, desc_v, desc_o, N_CTX_Q, N_CTX_K,
+              HEAD_DIM: tl.constexpr,
+              BLOCK_M: tl.constexpr,
+              BLOCK_N: tl.constexpr,
+              FP8_OUTPUT: tl.constexpr,
+              USE_BF16: tl.constexpr,
+              STAGE: tl.constexpr,
+              warp_specialize: tl.constexpr,
+              IS_HOPPER: tl.constexpr,
+              ):
+    dtype = tl.float8e5 if FP8_OUTPUT else (tl.bfloat16 if USE_BF16 else tl.float16)
+    tl.static_assert(BLOCK_N <= HEAD_DIM)
+    ^
+Triton autotuning for function _attn_fwd,
+with key as (1536, 1536, 64, False, True, True, 'torch.float32', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16'),
+finished after 61.44s,
+best config selected: BLOCK_M: 128, BLOCK_N: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None;
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Triton autotuning for function _attn_fwd,
+with key as (1536, 1536, 64, False, True, True, 'torch.float32', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16'),
+finished after 88.59s,
+best config selected: BLOCK_M: 64, BLOCK_N: 32, num_warps: 4, num_ctas: 1, num_stages: 2, maxnreg: None;
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 32, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 32, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 4, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 8, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 64, num_warps: 16, num_ctas: 1, num_stages: 5, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 3, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 4, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 8, num_ctas: 1, num_stages: 4, maxnreg: None
+Autotuning kernel _attn_bwd with config BLOCK_M1: 64, BLOCK_N1: 128, BLOCK_M2: 128, BLOCK_N2: 128, num_warps: 16, num_ctas: 1, num_stages: 4, maxnreg: None

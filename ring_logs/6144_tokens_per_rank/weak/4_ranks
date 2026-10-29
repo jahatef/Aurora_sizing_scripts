@@ -1,0 +1,8 @@
+local_rank: 0
+rank is 0
+local_rank: 1
+rank is 1
+local_rank: 3
+rank is 3
+local_rank: 2
+rank is 2

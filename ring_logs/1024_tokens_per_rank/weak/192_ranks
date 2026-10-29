@@ -1,0 +1,398 @@
+local_rank: 5
+rank is 5
+local_rank: 7
+rank is 7
+local_rank: 4
+rank is 4
+local_rank: 10
+rank is 10
+local_rank: 3
+rank is 3
+local_rank: 0
+rank is 0
+local_rank: 1
+rank is 1
+local_rank: 9
+rank is 9
+local_rank: 6
+rank is 6
+local_rank: 2
+rank is 2
+local_rank: 11
+rank is 11
+local_rank: 8
+rank is 8
+local_rank: 11
+rank is 191
+local_rank: 4
+rank is 184
+local_rank: 6
+rank is 186
+local_rank: 9
+rank is 189
+local_rank: 3
+rank is 183
+local_rank: 10
+rank is 190
+local_rank: 1
+rank is 181
+local_rank: 8
+rank is 188
+local_rank: 7
+rank is 187
+local_rank: 2
+rank is 182
+local_rank: 0
+rank is 180
+local_rank: 5
+rank is 185
+local_rank: 8
+rank is 152
+local_rank: 0
+rank is 144
+local_rank: 3
+rank is 147
+local_rank: 5
+rank is 149
+local_rank: 7
+rank is 151
+local_rank: 4
+rank is 148
+local_rank: 10
+rank is 154
+local_rank: 11
+rank is 155
+local_rank: 6
+rank is 150
+local_rank: 0
+rank is 24
+local_rank: 1
+rank is 145
+local_rank: 9
+rank is 153
+local_rank: 5
+rank is 29
+local_rank: 2
+rank is 146
+local_rank: 7
+rank is 31
+local_rank: 10
+rank is 34
+local_rank: 2
+rank is 26
+local_rank: 1
+rank is 25
+local_rank: 6
+rank is 30
+local_rank: 8
+rank is 32
+local_rank: 4
+rank is 28
+local_rank: 3
+rank is 27
+local_rank: 9
+rank is 33
+local_rank: 11
+rank is 35
+local_rank: 1
+rank is 109
+local_rank: 10
+rank is 118
+local_rank: 3
+rank is 111
+local_rank: 8
+rank is 116
+local_rank: 4
+rank is 112
+local_rank: 5
+rank is 113
+local_rank: 1
+rank is 49
+local_rank: 9
+rank is 117
+local_rank: 2
+rank is 50
+local_rank: 7
+rank is 55
+local_rank: 2
+rank is 110
+local_rank: 6
+rank is 78
+local_rank: 10
+rank is 82
+local_rank: 11
+rank is 83
+local_rank: 9
+rank is 57
+local_rank: 7
+rank is 115
+local_rank: 11
+rank is 59
+local_rank: 0
+rank is 72
+local_rank: 0
+rank is 108
+local_rank: 3
+rank is 51
+local_rank: 10
+rank is 58
+local_rank: 11
+rank is 119
+local_rank: 7
+rank is 79
+local_rank: 4
+rank is 52
+local_rank: 6
+rank is 114
+local_rank: 5
+rank is 53
+local_rank: 5
+rank is 65
+local_rank: 8
+rank is 80
+local_rank: 0
+rank is 48
+local_rank: 9
+rank is 69
+local_rank: 10
+rank is 70
+local_rank: 2
+rank is 62
+local_rank: 9
+rank is 129
+local_rank: 11
+rank is 71
+local_rank: 11
+rank is 131
+local_rank: 0
+rank is 120
+local_rank: 1
+rank is 61
+local_rank: 3
+rank is 123
+local_rank: 8
+rank is 56
+local_rank: 4
+rank is 76
+local_rank: 5
+rank is 125
+local_rank: 6
+rank is 126
+local_rank: 8
+rank is 128
+local_rank: 7
+rank is 127
+local_rank: 7
+rank is 67
+local_rank: 6
+rank is 54
+local_rank: 9
+rank is 81
+local_rank: 10
+rank is 130
+local_rank: 3
+rank is 63
+local_rank: 3
+rank is 75
+local_rank: 4
+rank is 124
+local_rank: 0
+rank is 60
+local_rank: 2
+rank is 122
+local_rank: 5
+rank is 77
+local_rank: 1
+rank is 121
+local_rank: 4
+rank is 64
+local_rank: 1
+rank is 73
+local_rank: 2
+rank is 74
+local_rank: 8
+rank is 68
+local_rank: 6
+rank is 66
+local_rank: 3
+rank is 159
+local_rank: 5
+rank is 161
+local_rank: 10
+rank is 166
+local_rank: 9
+rank is 165
+local_rank: 8
+rank is 164
+local_rank: 11
+rank is 167
+local_rank: 7
+rank is 163
+local_rank: 6
+rank is 162
+local_rank: 0
+rank is 156
+local_rank: 4
+rank is 160
+local_rank: 0
+rank is 168
+local_rank: 6
+rank is 174
+local_rank: 8
+rank is 176
+local_rank: 9
+rank is 177
+local_rank: 2
+rank is 158
+local_rank: 10
+rank is 178
+local_rank: 1
+rank is 157
+local_rank: 4
+rank is 172
+local_rank: 5
+rank is 173
+local_rank: 7
+rank is 175
+local_rank: 3
+rank is 171
+local_rank: 2
+rank is 170
+local_rank: 11
+rank is 179
+local_rank: 1
+rank is 169
+local_rank: 3
+rank is 87
+local_rank: 1
+rank is 85
+local_rank: 10
+rank is 94
+local_rank: 11
+rank is 95
+local_rank: 4
+rank is 88
+local_rank: 4
+rank is 136
+local_rank: 5
+rank is 137
+local_rank: 6
+rank is 90
+local_rank: 7
+rank is 91
+local_rank: 3
+rank is 135
+local_rank: 6
+rank is 138
+local_rank: 5
+rank is 101
+local_rank: 11
+rank is 107
+local_rank: 9
+rank is 93
+local_rank: 4
+rank is 100
+local_rank: 0
+rank is 132
+local_rank: 9
+rank is 45
+local_rank: 0
+rank is 84
+local_rank: 0
+rank is 96
+local_rank: 6
+rank is 42
+local_rank: 8
+rank is 92
+local_rank: 7
+rank is 103
+local_rank: 10
+rank is 142
+local_rank: 5
+rank is 89
+local_rank: 10
+rank is 106
+local_rank: 4
+rank is 40
+local_rank: 2
+rank is 134
+local_rank: 5
+rank is 41
+local_rank: 8
+rank is 140
+local_rank: 10
+rank is 46
+local_rank: 2
+rank is 86
+local_rank: 11
+rank is 47
+local_rank: 3
+rank is 99
+local_rank: 3
+rank is 39
+local_rank: 9
+rank is 141
+local_rank: 2
+rank is 98
+local_rank: 11
+rank is 143
+local_rank: 7
+rank is 43
+local_rank: 7
+rank is 139
+local_rank: 6
+rank is 102
+local_rank: 2
+rank is 38
+local_rank: 1
+rank is 133
+local_rank: 1
+rank is 97
+local_rank: 8
+rank is 44
+local_rank: 9
+rank is 105
+local_rank: 3
+rank is 15
+local_rank: 7
+rank is 19
+local_rank: 1
+rank is 37
+local_rank: 8
+rank is 104
+local_rank: 11
+rank is 23
+local_rank: 0
+rank is 36
+local_rank: 5
+rank is 17
+local_rank: 1
+rank is 13
+local_rank: 2
+rank is 14
+local_rank: 4
+rank is 16
+local_rank: 6
+rank is 18
+local_rank: 10
+rank is 22
+local_rank: 8
+rank is 20
+local_rank: 0
+rank is 12
+local_rank: 9
+rank is 21
+2026:10:27-21:58:10:14460 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-21:58:10:14460 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
+Algo: ringX_attn.ringX1_attn
+Batch size: 4
+Sequence length: 196608
+Number of heads: 32
+Head dimension: 64
+Dtype: bfloat16
+# ringX1_attn_func [fwd_bwd]
+ngpus: 192, causal: True, batch: 4, seqlen: 196608, num_heads: 32, head_dim: 64
+0.143649 iter/s, 696.140 sec
+BENCHMARK_RESULT {"algo": "ringX_attn.ringX1_attn", "backward_backend": "fused", "batch": 4, "bwd_kernel": "two_phase", "causal": true, "dtype": "bfloat16", "forward_backend": "fused", "head_dim": 64, "impl": "ringX1_attn_func", "iter_per_s": 0.1436491874243795, "mode": "fwd_bwd", "ngpus": 192, "num_heads": 32, "reason": "", "requested_backend": "fused", "seqlen": 196608, "status": "ok", "total_sec": 696.1403805548325}
+2026:10:27-22:33:17:14951 |CCL_WARN| value of CCL_OP_SYNC changed to be 1 (default:0)
+2026:10:27-22:33:17:14951 |CCL_WARN| value of CCL_PROCESS_LAUNCHER changed to be pmix (default:hydra)
