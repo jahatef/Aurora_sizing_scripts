@@ -1,0 +1,52 @@
+#!/bin/bash -l
+#PBS -N attn_kernel_bench
+#PBS -l select=1
+#PBS -l walltime=02:00:00
+#PBS -l filesystems=flare:home
+#PBS -q debug
+#PBS -A FoundMedicine
+#PBS -j oe
+#
+# Single-tile attention kernel benchmark on one Aurora node.
+# Three independent processes run at once, each on a tile of a different GPU:
+#   tile 0  ringX (RINGX_ATTN_BACKEND=fused)    ringX2, ringX3
+#   tile 2  ringX (RINGX_ATTN_BACKEND=portable) ringX3, ringX4
+#   tile 4  non-ringX kernels                   sdpa, flash_attn (if installed), eager
+# ringX reads RINGX_ATTN_BACKEND at import, which is why backends get separate processes.
+#
+# Usage: qsub run_attn_bench.pbs
+#        (or, on an interactive node: bash run_attn_bench.pbs)
+
+set -u
+cd "${PBS_O_WORKDIR:-$(pwd)}"
+
+module load frameworks
+# ringX_attn must be importable; point this at your checkout if it isn't installed.
+# export PYTHONPATH=/lus/flare/projects/FoundMedicine/jahatef/ringX-attention:${PYTHONPATH:-}
+
+# Reuse the Triton caches from ring_torchrun.sh so autotuning (~12 min per new
+# shape) only happens once per (seqlen, head_dim).
+export TRITON_CACHE_DIR=/lus/flare/projects/FoundMedicine/jahatef/triton_cache/cache
+export TRITON_AUTOTUNE_CACHE_DIR=/lus/flare/projects/FoundMedicine/jahatef/triton_cache/autotune
+export TRITON_PRINT_AUTOTUNING=1
+
+# Shapes: NeoX 1.3B is 32 heads x 64 (hidden 2048) with micro-batch 28; 16x128 keeps
+# hidden at 2048. Local seqlens 2048/4096/8192 cover today's 2k tokens/tile and the
+# larger shards worth considering.
+BATCH=${BATCH:-4,28}
+SEQLEN=${SEQLEN:-2048,4096,8192}
+HEADS=${HEADS:-32x64,16x128}
+OUT=${OUT:-attn_bench_$(date +%Y%m%d_%H%M%S)}
+mkdir -p "$OUT"
+
+COMMON="--batch $BATCH --seqlen $SEQLEN --head-configs $HEADS --dtype bfloat16 --warmup 10 --iters 30"
+
+ZE_AFFINITY_MASK=0 python bench_attn_kernels.py --kernels ringX2,ringX3 --ringx-backend fused \
+    $COMMON --csv "$OUT/ringx_fused.csv"    > "$OUT/ringx_fused.log" 2>&1 &
+ZE_AFFINITY_MASK=2 python bench_attn_kernels.py --kernels ringX3,ringX4 --ringx-backend portable \
+    $COMMON --no-gemm --csv "$OUT/ringx_portable.csv" > "$OUT/ringx_portable.log" 2>&1 &
+ZE_AFFINITY_MASK=4 python bench_attn_kernels.py --kernels sdpa,flash_attn,eager \
+    $COMMON --no-gemm --csv "$OUT/torch_kernels.csv" > "$OUT/torch_kernels.log" 2>&1 &
+wait
+
+python summarize_attn_bench.py "$OUT"/*.csv | tee "$OUT/summary.txt"
